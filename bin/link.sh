@@ -133,27 +133,27 @@ read -p "Enter your choice: " choice
 case $choice in
 1)
 clear
-atom.sh
+./atom.sh
 read -n 1 -s -r -p "  Press any key to return ↩︎"
 ;;
 2)
 clear
-zuko.sh
+./zuko.sh
 read -n 1 -s -r -p "  Press any key to return ↩︎"
 ;;
 3)
 clear
-killie.sh
+./killie.sh
 read -n 1 -s -r -p "  Press any key to return ↩︎"
 ;;
 4)
 clear
-azure.sh
+./azure.sh
 read -n 1 -s -r -p "  Press any key to return ↩︎"
 ;;
 5)
 clear
-info.sh
+./info.sh
 read -n 1 -s -r -p "  Press any key to return ↩︎"
 ;;
 6)
