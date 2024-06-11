@@ -97,8 +97,8 @@ After=network.target
 
 [Service]
 Type=simple
-WorkingDirectory=/etc/M/bin
-ExecStart=/etc/M/bin/lnk-linux-amd64 -cfg /etc/M/cfg/config.json
+WorkingDirectory=/etc/M/cfg
+ExecStart=/etc/M/cfg/lnk-linux-amd64 -cfg /etc/M/cfg/config.json
 Restart=always
 
 [Install]
