@@ -5,12 +5,12 @@ fi
 banner1() {
 clear
 figlet -k LinkLayer | lolcat
-echo -e "\033[1;34m  VPN Manager\033[0m | \033[1;33m3.0 Public | @voltsshx | @lstunnels\033[0m"
+echo -e "\033[1;34m  VPN Manager\033[0m | \033[1;33m3.0 Public | @ResleevedNet | @Am_The_Last_Envoy\033[0m"
 echo -e "\033[1;36m╰═════════════════════════════════════════════════════╯\033[0m"
 echo ""
 }
 [[ ! -e /usr/lib/voltx ]] && rm -rf /bin/ > /dev/null 2>&1
-database="/etc/lnklyr/layers/authy/accounts.db"
+database="/etc/M/layers/authy/accounts.db"
 banner1
 echo -e "\033[1;33m  ⌯ Account Remover\033[1;33m"
 echo -e "\033[1;36m•═══════════════════════════════════════════════════•\033[0m"
@@ -57,8 +57,8 @@ echo ""
 pkill -f "$user" > /dev/null 2>&1
 deluser --force $user > /dev/null 2>&1
 echo -e "\E[41;1;37m・ User $user successfully removed! \E[0m"
-grep -v ^$user[[:space:]] /etc/lnklyr/layers/authy/accounts.db > /tmp/ph ; cat /tmp/ph > /etc/lnklyr/layers/authy/accounts.db
-rm /etc/lnklyr/layers/authy/passwds/$user 1>/dev/null 2>/dev/null
+grep -v ^$user[[:space:]] /etc/M/layers/authy/accounts.db > /tmp/ph ; cat /tmp/ph > /etc/lnklyr/layers/authy/accounts.db
+rm /etc/M/layers/authy/passwds/$user 1>/dev/null 2>/dev/null
 exit 1
 elif [[ "$(cat "$database"| grep -w $user| wc -l)" -ne "0" ]]; then
 ps x | grep $user | grep -v grep | grep -v pt > /tmp/rem
@@ -67,7 +67,7 @@ deluser --force $user > /dev/null 2>&1
 echo ""
 echo -e "\E[41;1;37m・ Account $user successfully removed! \E[0m"
 grep -v ^$user[[:space:]] /etc/lnklyr/layers/authy/accounts.db > /tmp/ph ; cat /tmp/ph > /etc/lnklyr/layers/authy/accounts.db
-rm /etc/lnklyr/layers/authy/passwds/$user 1>/dev/null 2>/dev/null
+rm /etc/M/layers/authy/passwds/$user 1>/dev/null 2>/dev/null
 remove_user
 else
 echo ""
@@ -75,8 +75,8 @@ echo "・ Account logged out. Disconnecting..."
 pkill -f "$user" > /dev/null 2>&1
 deluser --force $user > /dev/null 2>&1
 echo -e "\E[41;1;37m・ Account $user successfully removed! \E[0m"
-grep -v ^$user[[:space:]] /etc/lnklyr/layers/authy/accounts.db > /tmp/ph ; cat /tmp/ph > /etc/lnklyr/layers/authy/accounts.db
-rm /etc/lnklyr/layers/authy/passwds/$user 1>/dev/null 2>/dev/null
+grep -v ^$user[[:space:]] /etc/M/layers/authy/accounts.db > /tmp/ph ; cat /tmp/ph > /etc/M/layers/authy/accounts.db
+rm /etc/M/layers/authy/passwds/$user 1>/dev/null 2>/dev/null
 sudo userdel -r "$user" 1>/dev/null 2>/dev/null
 if [[ -e /etc/openvpn/server.conf ]]; then
 remove_ovp $user
