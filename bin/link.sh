@@ -51,7 +51,7 @@ echo -e "\033[1;36m ────────────────────
 echo -e "\033[1;33m $output1\033[0m"
 echo -e "\033[1;36m•═══════════════════════════════════════════════════•\033[0m"
 obfs_key=$(cat /etc/M/cfg/obfs_key)
-service_state=$(systemctl is-active link-server.service 2>/dev/null)
+service_state=$(systemctl is-active lnk-server.service 2>/dev/null)
 if [[ $service_state == "active" ]]; then
 service_status="\033[1;32mService: \033[0m\033[1;33m$service_state\033[0m"
 else
@@ -77,7 +77,7 @@ echo -e "\033[1;35m OS: $oscode | Arch: $os_arch | RAM: $ram | CPU: $cpu\033[0m"
 echo -e "\033[1;36m•═══════════════════════════════════════════════════•\033[0m"
 echo -e "\033[1;35m // Active Protocols \033[0m"
 obfs_key=$(cat /etc/M/cfg/obfs_key)
-service_state=$(systemctl is-active link-server.service 2>/dev/null)
+service_state=$(systemctl is-active lnk-server.service 2>/dev/null)
 if [[ $service_state == "active" ]]; then
 service_status="\033[1;32mService: \033[0m\033[1;33m$service_state\033[0m"
 else
@@ -90,13 +90,13 @@ uninstallation() {
 banner00
 echo "Please wait..."
 sleep 5
-systemctl stop link-server.service &>/dev/null
-systemctl disable link-server.service &>/dev/null
+systemctl stop lnk-server.service &>/dev/null
+systemctl disable lnk-server.service &>/dev/null
 rm -rf /etc/M
 rm -rf /usr/bin/link
-rm -rf /usr/share/lnklyr
+rm -rf /usr/share/lnk
 rm -rf /var/log/linklayer.log
-rm -rf /etc/systemd/system/link-server.service &>/dev/null
+rm -rf /etc/systemd/system/lnk-server.service &>/dev/null
 while IFS= read -r username; do
 userdel -r "$username"
 done < <(grep -oP '^user[0-9]+:' /etc/passwd | cut -d: -f1)
@@ -168,12 +168,12 @@ read -n 1 -s -r -p "  Press any key to return ↩︎"
 7)
 banner
 if [[ $service_state == "active" ]]; then
-systemctl restart link-server.service &>/dev/null
+systemctl restart lnk-server.service &>/dev/null
 echo -e "\nService restarted successfully."
 sleep 3
 else
-systemctl enable link-server.service &>/dev/null
-systemctl start link-server.service &>/dev/null
+systemctl enable lnk-server.service &>/dev/null
+systemctl start lnk-server.service &>/dev/null
 echo -e "\nService force started successfully."
 sleep 3
 fi
