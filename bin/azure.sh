@@ -5,7 +5,7 @@ fi
 banner1() {
 clear
 figlet -k LinkLayer | lolcat
-echo -e "\033[1;34m  VPN Manager\033[0m | \033[1;33m3.0 Public | @voltsshx | @lstunnels\033[0m"
+echo -e "\033[1;34m  VPN Manager\033[0m | \033[1;33m3.0 Public | @ResleevedNet| @Am_The_Last_Envoy \033[0m"
 echo -e "\033[1;36m╰═════════════════════════════════════════════════════╯\033[0m"
 echo ""
 }
@@ -14,7 +14,7 @@ echo -e "\033[1;33m  ⌯ Change Account Expiration Date\033[1;33m"
 echo -e "\033[1;36m•═══════════════════════════════════════════════════•\033[0m"
 echo -e "\033[1;33m・ Accounts & Expiration Date:\033[0m "
 echo ""
-database="/etc/lnklyr/layers/authy/accounts.db"
+database="/etc/M/layers/authy/accounts.db"
 list_user=$(awk -F: '$3>=1000 {print $1}' /etc/passwd | grep -v nobody)
 i=0
 i=0
