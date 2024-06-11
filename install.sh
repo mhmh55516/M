@@ -67,7 +67,7 @@ configger(){
 read -p "Enter your domain name (or use 0.0.0.0): " domain
 $domain=domain
 netty=$(ip -4 route ls|grep default|grep -Po '(?<=dev )(\S+)'|head -1)
-cat << EOF > /etc/M/cfg/config.json
+cat <<EOF >/etc/M/cfg/config.json
 {
     "auth":"binary",
      "file":"/etc/M/layers/authy/auth.txt",
@@ -135,14 +135,14 @@ cat << EOF > /etc/M/cfg/config.json
 },
        {"type":"udp",
        "cfg":{
-        "listen":":36718","exclude":"53,5300","net":"$(ip -4 route ls|grep default|grep -Po '(?<=dev )(\S+)'|head -1)","cert":"/etc/M/layers/cfgs/lnklyr.crt","key":"/etc/M/layers/cfgs/lnklyr.key","obfs":"LnkLyrVPN2k24","max_conn_client":500000
+        "listen":":36718","exclude":"53,5300","net":"netty","cert":"/etc/M/layers/cfgs/lnklyr.crt","key":"/etc/M/layers/cfgs/lnklyr.key","obfs":"LnkLyrVPN2k24","max_conn_client":500000
       }
       },
        
        {"type":"dnstt",
        "cfg":{
          "Domain":"$domain",
-         "Net":"$(ip -4 route ls|grep default|grep -Po '(?<=dev )(\S+)'|head -1)"
+         "Net":"$netty"
        }
       }
      ]
