@@ -1,6 +1,6 @@
 {
     "auth":"system",
-    "banner":"LinkLayerVPN Manager Script by @voltsshx",
+    "banner":"LinkLayerVPN Manager Script by @ResleevedNet",
     "limit_conn_single":-1,
     "limit_conn_request":-1,
      "services":[
@@ -14,8 +14,8 @@
        {
          "type":"tls",
          "cfg":{
-          "Cert":"/etc/lnklyr/cfg/cert.pem",
-           "Key":"/etc/lnklyr/cfg/key.pem",
+          "Cert":"/etc/M/cfg/cert.pem",
+           "Key":"/etc/M/cfg/key.pem",
            "Listen":"0.0.0.0:8001"
          }
        },
@@ -41,8 +41,8 @@
             "Response":"HTTP/1.1 206 OK\r\n\r\n"
          },
          "TLS":{
-          "Cert":"/etc/lnklyr/cfg/cert.pem",
-          "Key":"/etc/lnklyr/cfg/key.pem"
+          "Cert":"/etc/M/cfg/cert.pem",
+          "Key":"/etc/M/cfg/key.pem"
          },
          "Listen":"0.0.0.0:8990"
        }
@@ -54,8 +54,8 @@
             "Response":"HTTP/1.1 200 OK\r\n\r\n"
          },
          "TLS":{
-          "Cert":"/etc/lnklyr/cfg/cert.pem",
-          "Key":"/etc/lnklyr/cfg/key.pem"
+          "Cert":"/etc/M/cfg/cert.pem",
+          "Key":"/etc/M/cfg/key.pem"
          },
          "Listen":"0.0.0.0:443"
        }
@@ -63,7 +63,7 @@
 },
        {"type":"udp",
        "cfg":{
-        "listen":":36718","exclude":"53,5300","net":"$netty","cert":"/etc/lnklyr/layers/cfgs/lnklyr.crt","key":"/etc/lnklyr/layers/cfgs/lnklyr.key","obfs":"LnkLyrVPN2k24","max_conn_client":500000
+        "listen":":36718","exclude":"53,5300","net":"$netty","cert":"/etc/M/layers/cfgs/lnklyr.crt","key":"/etc/M/layers/cfgs/lnklyr.key","obfs":"LnkLyrVPN2k24","max_conn_client":500000
       }
       },
        
