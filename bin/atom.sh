@@ -9,7 +9,7 @@ echo -e "\033[1;34m  VPN Manager\033[0m | \033[1;33m3.0 Public | @voltsshx | @ls
 echo -e "\033[1;36m╰═════════════════════════════════════════════════════╯\033[0m"
 echo ""
 server_ip=$(curl -s https://api.ipify.org)
-echo -e "\n\033[1;33m OBFS Key: \033[0m$(cat /etc/lnklyr/cfg/obfs_key)"
+echo -e "\n\033[1;33m OBFS Key: \033[0m$(cat /etc/M/cfg/obfs_key)"
 echo -e "\033[1;36m ───────────────────────────────────────────────────•\033[0m"
 }
 banner1
@@ -47,10 +47,10 @@ useradd -e "$expiration_date" -s /bin/false -M "$username" >/dev/null 2>&1
 hashed_password=$(openssl passwd -1 "$password")
 usermod --password "$hashed_password" "$username"
 chage -E "$expiration_date" "$username"
-echo "$username:$password:$connection_limit" >> /etc/lnklyr/layers/authy/accounts.txt
+echo "$username:$password:$connection_limit" >> /etc/M/layers/authy/accounts.txt
 echo "\033[0m"
-echo "$password" >/etc/lnklyr/layers/authy/passwds/$username
-echo "$username $connection_limit" >>/etc/lnklyr/layers/authy/accounts.db
+echo "$password" >/etc/M/layers/authy/passwds/$username
+echo "$username $connection_limit" >>/etc/M/layers/authy/accounts.db
 clear
 banner1
 echo ""
@@ -59,11 +59,11 @@ echo -e "\033[1;36m•═══════════════════�
 echo -e "\033[1;34m・ Note: All Protocols use same account details!"
 echo -e "\033[1;34m・・・・・・・・"
 echo -e "\033[1;36m•═══════════════════════════════════════════════════•\033[0m"
-echo -e "\e[36m・ Domain           ➤  \033[1;31m$(cat /etc/lnklyr/cfg/domain)"
+echo -e "\e[36m・ Domain           ➤  \033[1;31m$(cat /etc/M/cfg/domain)"
 echo -e "\e[36m・ Server IP        ➤  \033[1;31m$server_ip"
 echo -e "\e[36m・ Username         ➤  \033[1;31m$username"
 echo -e "\e[36m・ Password         ➤  \033[1;31m$password"
-echo -e "\e[36m・ OBFS Key         ➤  \033[1;31m$(cat /etc/lnklyr/cfg/obfs_key)"
+echo -e "\e[36m・ OBFS Key         ➤  \033[1;31m$(cat /etc/M/cfg/obfs_key)"
 echo -e "\e[36m・ Expiration Date  ➤  \033[1;31m$expiration_date\033[0m"
 echo -e "\e[36m・ Connection Limit ➤  \033[1;31m$connection_limit\033[0m"
 echo ""
