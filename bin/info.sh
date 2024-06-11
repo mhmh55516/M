@@ -5,7 +5,7 @@ fi
 banner1() {
 clear
 figlet -k LinkLayer | lolcat
-echo -e "\033[1;34m  VPN Manager\033[0m | \033[1;33m3.0 Public | @voltsshx | @lstunnels\033[0m"
+echo -e "\033[1;34m  VPN Manager\033[0m | \033[1;33m3.0 Public | @ResleevedNet | @Am_The_Last_Envoy\033[0m"
 echo -e "\033[1;36m╰═════════════════════════════════════════════════════╯\033[0m"
 echo ""
 }
@@ -17,13 +17,13 @@ echo ""
 [[ ! -e /bin/ver ]] && rm -rf /bin/menu
 for users in `awk -F : '$3 > 900 { print $1 }' /etc/passwd |sort |grep -v "nobody" |grep -vi polkitd |grep -vi system- |grep -v "systemd-coredump" |grep -v "snap_daemon" |grep -v "ubuntu" |grep -v "lxd" |grep -v "core"`
 do
-if [[ $(grep -cw $users /etc/lnklyr/layers/authy/accounts.db) == "1" ]]; then
-lim=$(grep -w $users /etc/lnklyr/layers/authy/accounts.db | cut -d' ' -f2)
+if [[ $(grep -cw $users /etc/M/layers/authy/accounts.db) == "1" ]]; then
+lim=$(grep -w $users /etc/M/layers/authy/accounts.db | cut -d' ' -f2)
 else
 lim="1"
 fi
-if [[ -e "/etc/lnklyr/layers/authy/passwds/$users" ]]; then
-passwds=$(cat /etc/lnklyr/layers/authy/passwds/$users)
+if [[ -e "/etc/M/layers/authy/passwds/$users" ]]; then
+passwds=$(cat /etc/M/layers/authy/passwds/$users)
 else
 passwds="Null"
 fi
