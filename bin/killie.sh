@@ -57,7 +57,7 @@ echo ""
 pkill -f "$user" > /dev/null 2>&1
 deluser --force $user > /dev/null 2>&1
 echo -e "\E[41;1;37m・ User $user successfully removed! \E[0m"
-grep -v ^$user[[:space:]] /etc/M/layers/authy/accounts.db > /tmp/ph ; cat /tmp/ph > /etc/lnklyr/layers/authy/accounts.db
+grep -v ^$user[[:space:]] /etc/M/layers/authy/accounts.db > /tmp/ph ; cat /tmp/ph > /etc/M/layers/authy/accounts.db
 rm /etc/M/layers/authy/passwds/$user 1>/dev/null 2>/dev/null
 exit 1
 elif [[ "$(cat "$database"| grep -w $user| wc -l)" -ne "0" ]]; then
@@ -66,7 +66,7 @@ if [[ `grep -c $user /tmp/rem` -eq 0 ]]; then
 deluser --force $user > /dev/null 2>&1
 echo ""
 echo -e "\E[41;1;37m・ Account $user successfully removed! \E[0m"
-grep -v ^$user[[:space:]] /etc/lnklyr/layers/authy/accounts.db > /tmp/ph ; cat /tmp/ph > /etc/lnklyr/layers/authy/accounts.db
+grep -v ^$user[[:space:]] /etc/M/layers/authy/accounts.db > /tmp/ph ; cat /tmp/ph > /etc/M/layers/authy/accounts.db
 rm /etc/M/layers/authy/passwds/$user 1>/dev/null 2>/dev/null
 remove_user
 else
