@@ -158,7 +158,7 @@ EOF
 fetcher () {
 print_status "Fetching with latest commits..."
 rm -rf /etc/lnklyr &>/dev/null
-git clone -q https://github.com/vxu007/lnklyr.git /etc/lnklyr
+git clone -q https://github.com/JohnReaJR/M.git /etc/lnklyr
 if [ $? -ne 0 ]; then
 echo "Failed to fetch repo!"
 exit 1
@@ -205,7 +205,7 @@ systemctl daemon-reload &>/dev/null
 systemctl start lnklyr-server &>/dev/null
 }
 banner() {
-sed -i '/figlet -k Voltssh-X | lolcat/,/echo -e ""/d' ~/.bashrc
+sed -i '/figlet -k Resleeved | lolcat/,/echo -e ""/d' ~/.bashrc
 sed -i '/figlet -k Hysteria | lolcat/,/echo -e ""/d' ~/.bashrc
 echo 'clear' >>~/.bashrc
 echo 'echo ""' >>~/.bashrc
@@ -214,8 +214,8 @@ echo 'echo -e "\t\e\033[94m⚙︎ LinkLayer VPN Manager by @voltsshx ⚙︎\033[
 echo 'echo -e "\t\e\033[94mTelegram: @voltsshx // \033[0m"' >>~/.bashrc
 echo 'echo -e "\t\e\033[94m..SSHX.. (c)2021 </> 2024 // \033[0m"' >>~/.bashrc
 echo 'echo "" ' >>~/.bashrc
-echo 'echo -e "\t\033[92mTelegram   : @voltsshx | LS Tunnels" ' >>~/.bashrc
-echo 'echo -e "\t\e[1;33mPowered by : AIB Tech Pvt."' >>~/.bashrc
+echo 'echo -e "\t\033[92mTelegram   : @Am_The_Last_Envoy | Resleeved Net" ' >>~/.bashrc
+echo 'echo -e "\t\e[1;33mPowered by : Resleeved Net."' >>~/.bashrc
 echo 'echo ""' >>~/.bashrc
 echo 'DATE=$(date +"%d-%m-%y")' >>~/.bashrc
 echo 'TIME=$(date +"%T")' >>~/.bashrc
@@ -224,7 +224,7 @@ echo 'echo -e "\t\e[1;33mServer Uptime Time : $(uptime -p)"' >>~/.bashrc
 echo 'echo -e "\t\e[1;33mServer Date : $DATE"' >>~/.bashrc
 echo 'echo -e "\t\e[1;33mServer Time : $TIME"' >>~/.bashrc
 echo 'echo "" ' >>~/.bashrc
-echo 'echo -e "\t\e\033[94mSend us mail: iyke.earth@gmail.com \033[0m"' >>~/.bashrc
+echo 'echo -e "\t\e\033[94mSend us mail: devil@gmail.com \033[0m"' >>~/.bashrc
 echo 'echo "" ' >>~/.bashrc
 echo 'echo -e "\t\e\033[92mMenu command: link \033[0m"' >>~/.bashrc
 echo 'echo -e ""' >>~/.bashrc
@@ -236,7 +236,7 @@ find / -type f -name "lnklyr.sh" -delete >/dev/null 2>&1
 verification() {
 clear
 fetch_valid_keys() {
-keys=$(curl -s -H "Cache-Control: no-cache" -H "Pragma: no-cache" "https://raw.githubusercontent.com/zac6ix/zac6ix.github.io/master/lnk.json")
+keys=$(curl -s -H "Cache-Control: no-cache" -H "Pragma: no-cache" "https://raw.githubusercontent.com/JohnReaJR/M.github.io/master/v.json")
 echo "$keys"
 }
 verify_key() {
@@ -255,18 +255,18 @@ echo "────────────────────────�
 echo ""
 echo ""
 echo -e " 〄 \033[1;37m ⌯  \033[1;33mYou must have purchased a Key\033[0m"
-echo -e " 〄 \033[1;37m ⌯  \033[1;33mif you didn't, contact [v3r!f.y.Key 𝕏]\033[0m"
+echo -e " 〄 \033[1;37m ⌯  \033[1;33mif you didn't, contact [Resleeved 𝕏]\033[0m"
 echo -e " 〄 \033[1;37m ⌯ ⇢ \033[1;33mhttps://t.me/voltverifybot\033[0m"
-echo -e " 〄 \033[1;37m ⌯  \033[1;33mYou can also contact @voltsshx on Telegram\033[0m"
+echo -e " 〄 \033[1;37m ⌯  \033[1;33mYou can also contact @VeCNa_rK_bot on Telegram\033[0m"
 echo ""
 echo "───────────────────────────────────────────────────────────────────────•"
 read -p " ⇢ Please enter the Installation key: " user_key
 user_key=$(echo "$user_key" | tr -d '[:space:]')
 if [[ ${#user_key} -ne 10 ]]; then
 echo "${T_RED} ⇢ Verification failed. Aborting installation.${T_RESET}"
-find / -type f -name "lnk.json" -delete >/dev/null 2>&1
-rm -f /root/lnk.json >/dev/null 2>&1
-rm -f lnk.json >/dev/null 2>&1
+find / -type f -name "v.json" -delete >/dev/null 2>&1
+rm -f /root/v.json >/dev/null 2>&1
+rm -f v.json >/dev/null 2>&1
 echo ""
 exit 1
 fi
@@ -277,9 +277,9 @@ echo "${T_GREEN} ⇢ Proceeding with the installation...${T_RESET}"
 echo ""
 echo ""
 echo -e "\033[1;32m ♻️ Please wait...\033[0m"
-find / -type f -name "lnk.json" -delete >/dev/null 2>&1
-rm -f /root/lnk.json >/dev/null 2>&1
-rm -f lnk.json >/dev/null 2>&1
+find / -type f -name "v.json" -delete >/dev/null 2>&1
+rm -f /root/v.json >/dev/null 2>&1
+rm -f v.json >/dev/null 2>&1
 sleep 1
 clear
 clear
