@@ -69,6 +69,85 @@ if [ -z "$domain" ]; then
 domain="0.0.0.0"
 fi
 netty=$(ip -4 route ls|grep default|grep -Po '(?<=dev )(\S+)'|head -1)
+cat << EOF > /etc/M/cfg/config.json
+{
+    "auth":"system",
+    "banner":"LinkLayerVPN Manager Script by @ResleevedNet",
+    "limit_conn_single":-1,
+    "limit_conn_request":-1,
+     "services":[
+{
+ "type":"httpdual",
+        "cfg":{
+          "Listen":"0.0.0.0:8000"
+        }
+},
+
+       {
+         "type":"tls",
+         "cfg":{
+          "Cert":"/etc/M/cfg/cert.pem",
+           "Key":"/etc/M/cfg/key.pem",
+           "Listen":"0.0.0.0:8001"
+         }
+       },
+       {
+        "type":"http",
+        "cfg":{
+          "Response":"HTTP/1.1 206 OK\r\n\r\n",
+          "Listen":"0.0.0.0:8002"
+
+        }
+       },
+	{
+	"type":"http",
+        "cfg":{
+          "Response":"HTTP/1.1 200 OK\r\n\r\n",
+          "Listen":"0.0.0.0:80"
+
+        }
+        },
+       {"type":"httptls",
+       "cfg":{
+         "Http":{
+            "Response":"HTTP/1.1 206 OK\r\n\r\n"
+         },
+         "TLS":{
+          "Cert":"/etc/M/cfg/cert.pem",
+          "Key":"/etc/M/cfg/key.pem"
+         },
+         "Listen":"0.0.0.0:8990"
+       }
+      },
+
+{"type":"httptls",
+       "cfg":{
+         "Http":{
+            "Response":"HTTP/1.1 200 OK\r\n\r\n"
+         },
+         "TLS":{
+          "Cert":"/etc/M/cfg/cert.pem",
+          "Key":"/etc/M/cfg/key.pem"
+         },
+         "Listen":"0.0.0.0:443"
+       }
+     
+},
+       {"type":"udp",
+       "cfg":{
+        "listen":":36718","exclude":"53,5300","net":"$netty","cert":"/etc/M/layers/cfgs/lnklyr.crt","key":"/etc/M/layers/cfgs/lnklyr.key","obfs":"LnkLyrVPN2k24","max_conn_client":500000
+      }
+      },
+       
+       {"type":"dnstt",
+       "cfg":{
+         "Domain":"$domain",
+         "Net":"$netty"
+       }
+      }
+     ]
+}
+EOF
 }
 fetcher () {
 print_status "Fetching with latest commits..."
