@@ -72,8 +72,8 @@ netty=$(ip -4 route ls|grep default|grep -Po '(?<=dev )(\S+)'|head -1)
 cat << EOF > /etc/M/cfg/config.json
 {
     "auth":"binary",
-     "file":"/etc/M/cfg/auth.txt",
-    "executable":"/root/auth.sh",
+     "file":"/etc/lnklyr/layers/authy/auth.txt",
+    "executable":"/etc/lnklyr/layers/authy/auth.sh",
     "banner":"linklayer by Newtoolsworks",
     "limit_conn_single":-1,
     "limit_conn_request":-1,
@@ -88,8 +88,8 @@ cat << EOF > /etc/M/cfg/config.json
        {
          "type":"tls",
          "cfg":{
-          "Cert":"/etc/M/cfg/cert.pem",
-           "Key":"/etc/M/cfg/key.pem",
+          "Cert":"/etc/lnklyr/cfg/cert.pem",
+           "Key":"/etc/lnklyr/cfg/key.pem",
            "Listen":"0.0.0.0:8001"
          }
        },
