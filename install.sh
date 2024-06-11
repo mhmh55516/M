@@ -69,7 +69,7 @@ if [ -z "$domain" ]; then
 domain="0.0.0.0"
 fi
 netty=$(ip -4 route ls|grep default|grep -Po '(?<=dev )(\S+)'|head -1)
-cat << EOF > /etc/M/cfg/config.json
+cat <<EOF >/etc/M/cfg/config.json
 {
     "auth":"system",
     "banner":"LinkLayerVPN Manager Script by @ResleevedNet",
