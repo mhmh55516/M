@@ -70,8 +70,39 @@ domain="0.0.0.0"
 fi
 netty=$(ip -4 route ls|grep default|grep -Po '(?<=dev )(\S+)'|head -1)
 }
-
-#Configure Config.json
+fetcher () {
+print_status "Fetching with latest commits..."
+rm -rf /etc/M &>/dev/null
+git clone -q https://github.com/JohnReaJR/M.git /etc/M
+if [ $? -ne 0 ]; then
+echo "Failed to fetch repo!"
+exit 1
+fi
+print_status "Setting permissions..."
+chown -R root:root /etc/M &>/dev/null
+chmod -R 755 /etc/M &>/dev/null
+if [ -f /etc/systemd/system/lnklyr-server.service ]; then
+print_status "x.service file already exists."
+print_status "Stopping and disabling the existing service..."
+systemctl stop lnklyr-server &>/dev/null
+systemctl disable lnklyr-server &>/dev/null
+rm /etc/systemd/system/lnklyr-server.service &>/dev/null
+print_status "Existing service stopped, disabled, and removed."
+fi
+print_status "Creating lnklyr-server.service file..."
+cat << EOF > /etc/systemd/system/lnklyr-server.service
+[Unit]
+Description=Linklayer VPN Server - @Resleeved
+After=network.target
+[Service]
+Type=simple
+WorkingDirectory=/etc/M/bin
+ExecStart=/etc/M/bin/server -cfg /etc/M/cfg/config.json
+Restart=always
+[Install]
+WantedBy=multi-user.target
+EOF
+print_status "Configure Config.json"
 cat <<EOF >/etc/M/cfg/config.json
 {
     "auth":"system",
@@ -150,41 +181,6 @@ cat <<EOF >/etc/M/cfg/config.json
       }
      ]
 }
-EOF
-###Done
-
-}
-fetcher () {
-print_status "Fetching with latest commits..."
-rm -rf /etc/M &>/dev/null
-git clone -q https://github.com/JohnReaJR/M.git /etc/M
-if [ $? -ne 0 ]; then
-echo "Failed to fetch repo!"
-exit 1
-fi
-print_status "Setting permissions..."
-chown -R root:root /etc/M &>/dev/null
-chmod -R 755 /etc/M &>/dev/null
-if [ -f /etc/systemd/system/lnklyr-server.service ]; then
-print_status "x.service file already exists."
-print_status "Stopping and disabling the existing service..."
-systemctl stop lnklyr-server &>/dev/null
-systemctl disable lnklyr-server &>/dev/null
-rm /etc/systemd/system/lnklyr-server.service &>/dev/null
-print_status "Existing service stopped, disabled, and removed."
-fi
-print_status "Creating lnklyr-server.service file..."
-cat << EOF > /etc/systemd/system/lnklyr-server.service
-[Unit]
-Description=Linklayer VPN Server - @Resleeved
-After=network.target
-[Service]
-Type=simple
-WorkingDirectory=/etc/M/bin
-ExecStart=/etc/M/bin/server -cfg /etc/M/cfg/config.json
-Restart=always
-[Install]
-WantedBy=multi-user.target
 EOF
 print_status "Terminating processes running on specified ports..."
 echo ""
