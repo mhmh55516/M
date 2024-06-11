@@ -333,7 +333,7 @@ echo "────────────────────────�
 echo "${T_GREEN}LinkLayer VPN Server | Manager - Installation completed!${T_RESET}"
 print_status "Setup completed successfully."
 echo ""
-echo "Please run 'systemctl status link-server.service' to check the status."
+echo "Please run 'systemctl status lnk-server.service' to check the status."
 echo ""
 echo "${T_YELLOW}Type: "link" to access the menu${T_RESET}"
 echo ""
