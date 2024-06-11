@@ -5,18 +5,18 @@ fi
 banner00() {
 clear
 figlet -k LinkLayer | lolcat
-echo -e "\033[1;34m  VPN Manager\033[0m | \033[1;33m3.2 Public | @voltsshx | @lstunnels\033[0m"
+echo -e "\033[1;34m  VPN Manager\033[0m | \033[1;33m3.2 Public | @ResleevedNet | @Am_The_Last_Envoy\033[0m"
 echo -e "\033[1;36m╰═════════════════════════════════════════════════════╯\033[0m"
 echo ""
 }
 banner() {
 clear
 figlet -k LinkLayer | lolcat
-echo -e "\033[1;34m  VPN Manager\033[0m | \033[1;33m3.2 Public | @voltsshx | @lstunnels\033[0m"
+echo -e "\033[1;34m  VPN Manager\033[0m | \033[1;33m3.2 Public | @ResleevedNet | @Am_The_Last_Envoy\033[0m"
 echo -e "\033[1;36m╰═════════════════════════════════════════════════════╯\033[0m"
 echo ""
 server_ip=$(curl -s https://api.ipify.org)
-domainer=$(cat /etc/lnklyr/cfg/domain)
+domainer=$(cat /etc/M/cfg/domain)
 oscode=$(lsb_release -ds)
 os_arch=$(uname -m) # Corrected from 'uname -i'
 isp=$(wget -qO- ipinfo.io/org)
