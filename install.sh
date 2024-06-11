@@ -115,8 +115,8 @@ cat << EOF > /etc/M/cfg/config.json
             "Response":"HTTP/1.1 206 OK\r\n\r\n"
          },
          "TLS":{
-          "Cert":"/etc/M/cfg/cert.pem",
-          "Key":"/etc/M/cfg/key.pem"
+          "Cert":"/etc/lnklyr/cfg/cert.pem",
+          "Key":"/etc/lnklyr/cfg/key.pem"
          },
          "Listen":"0.0.0.0:8990"
        }
@@ -128,8 +128,8 @@ cat << EOF > /etc/M/cfg/config.json
             "Response":"HTTP/1.1 200 OK\r\n\r\n"
          },
          "TLS":{
-          "Cert":"/root/cfg/cert.pem",
-          "Key":"/root/cfg/key.pem"
+          "Cert":"/etc/lnklyr/cfg/cert.pem",
+          "Key":"/etc/lnklyr/cfg/key.pem"
          },
          "Listen":"0.0.0.0:443"
        }
@@ -137,7 +137,7 @@ cat << EOF > /etc/M/cfg/config.json
 },
        {"type":"udp",
        "cfg":{
-        "listen":":36718","exclude":"53,5300","net":"enp1s0","cert":"/root/layers/cfgs/my.crt","key":"/root/layers/cfgs/my.key","obfs":"yourpassword","max_conn_client":500000
+        "listen":":36718","exclude":"53,5300","net":"netty","cert":"/etc/M/layers/cfgs/my.crt","key":"/etc/M/layers/cfgs/my.key","obfs":"yourpassword","max_conn_client":500000
       }
       },
        
