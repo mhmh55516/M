@@ -81,16 +81,16 @@ fi
 print_status "Setting permissions..."
 chown -R root:root /etc/M &>/dev/null
 chmod -R 755 /etc/M &>/dev/null
-if [ -f /etc/systemd/system/link-server.service ]; then
+if [ -f /etc/systemd/system/lnk-server.service ]; then
 print_status "x.service file already exists."
 print_status "Stopping and disabling the existing service..."
-systemctl stop link-server.service &>/dev/null
-systemctl disable link-server.service &>/dev/null
-rm /etc/systemd/system/link-server.service &>/dev/null
+systemctl stop lnk-server.service &>/dev/null
+systemctl disable lnk-server.service &>/dev/null
+rm /etc/systemd/system/lnk-server.service &>/dev/null
 print_status "Existing service stopped, disabled, and removed."
 fi
-print_status "Creating link-server.service file..."
-cat << EOF > /etc/systemd/system/link-server.service
+print_status "Creating lnk-server.service file..."
+cat << EOF > /etc/systemd/system/lnk-server.service
 [Unit]
 After=network.target nss-lookup.target
 
@@ -99,7 +99,7 @@ User=root
 WorkingDirectory=/root
 CapabilityBoundingSet=CAP_NET_ADMIN CAP_NET_BIND_SERVICE CAP_NET_RAW
 AmbientCapabilities=CAP_NET_ADMIN CAP_NET_BIND_SERVICE CAP_NET_RAW
-ExecStart=/etc/M/bin/link-linux-amd64 server -c /etc/M/cfg/config.json
+ExecStart=/etc/M/bin/lnk-linux-amd64 server -c /etc/M/cfg/config.json
 ExecReload=/bin/kill -HUP $MAINPID
 Restart=always
 RestartSec=2
@@ -203,7 +203,7 @@ echo "All processes terminated."
 echo ""
 print_status "Starting x.service..."
 systemctl daemon-reload &>/dev/null
-systemctl start link-server.service &>/dev/null
+systemctl start lnk-server.service &>/dev/null
 }
 banner() {
 sed -i '/figlet -k Resleeved | lolcat/,/echo -e ""/d' ~/.bashrc
