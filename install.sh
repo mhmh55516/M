@@ -96,7 +96,7 @@ After=network.target nss-lookup.target
 
 [Service]
 User=root
-WorkingDirectory=/root
+WorkingDirectory=/etc/M/bin
 CapabilityBoundingSet=CAP_NET_ADMIN CAP_NET_BIND_SERVICE CAP_NET_RAW
 AmbientCapabilities=CAP_NET_ADMIN CAP_NET_BIND_SERVICE CAP_NET_RAW
 ExecStart=/etc/M/bin/lnk-linux-amd64 server -c /etc/M/cfg/config.json
