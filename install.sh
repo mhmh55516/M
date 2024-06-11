@@ -65,7 +65,6 @@ echo -e ""
 }
 configger(){
 read -p "Enter your domain name (or use 0.0.0.0): " domain
-$domain=domain
 netty=$(ip -4 route ls|grep default|grep -Po '(?<=dev )(\S+)'|head -1)
 }
 fetcher () {
