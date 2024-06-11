@@ -138,7 +138,7 @@ read -n 1 -s -r -p "  Press any key to return ↩︎"
 ;;
 2)
 clear
-zsys.sh
+zuko.sh
 read -n 1 -s -r -p "  Press any key to return ↩︎"
 ;;
 3)
