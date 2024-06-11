@@ -15,12 +15,12 @@ echo "   ) /  | | | | | |  (_) |       "
 echo "  (_)   \ \`-' / | \`--. | |       "
 echo "         )---'  |( __.'\`-'       "
 echo "        (_)     (_)              "
-echo "  Telegram: @voltsshx //"
+echo "  Telegram: @VeCNa_rK_bot //"
 echo "  ..SSHX.. (c)2021 </> 2024 //"
 echo ""
 echo -e "\e[1m\e[34m****************************************************"
 echo -e "  Installation & Auto Config for \e[1;36mLinkLayer VPN\e[0m"
-echo -e "    (Version 3.0 Public) - by: @voltsshx // @deviyke"
+echo -e "    (Version 3.0 Public) - by: @VeCNa_rK_bot // @Resleeved"
 echo -e "           (Credit): (NewToolsWorks)"
 echo -e "\e[1m\e[34m****************************************************\e[0m"
 echo ""
@@ -38,7 +38,7 @@ echo "   ) /  | | | | | |  (_) |       "
 echo "  (_)   \ \`-' / | \`--. | |       "
 echo "         )---'  |( __.'\`-'       "
 echo "        (_)     (_)              "
-echo "  Telegram: @voltsshx //"
+echo "  Telegram: @VeCNa_rK_bot //"
 echo "  ..SSHX.. (c)2021 </> 2024 //"
 echo ""
 echo -e "\033[1;32m[\033[1;32mPass ✅\033[1;32m] \033[1;37m ⇢  \033[1;33mCollecting binaries...\033[0m"
@@ -69,11 +69,11 @@ if [ -z "$domain" ]; then
 domain="0.0.0.0"
 fi
 netty=$(ip -4 route ls | grep default | grep -Po '(?<=dev )(\S+)' | head -1)
-cat << EOF > /etc/lnklyr/cfg/config.json
+cat << EOF > /etc/M/cfg/config.json
 {
 "auth":"binary",
-"file":"/etc/lnklyr/layers/authy/auth.txt",
-"executable":"/etc/lnklyr/layers/authy/auth.sh",
+"file":"/etc/M/layers/authy/auth.txt",
+"executable":"/etc/M/layers/authy/auth.sh",
 "limit_conn_single":-1,
 "limit_conn_request":-1,
 "services":[
@@ -86,8 +86,8 @@ cat << EOF > /etc/lnklyr/cfg/config.json
 {
 "type":"tls",
 "cfg":{
-"Cert":"/etc/lnklyr/cfg/cert.pem",
-"Key":"/etc/lnklyr/cfg/key.pem",
+"Cert":"/etc/M/cfg/cert.pem",
+"Key":"/etc/M/cfg/key.pem",
 "Listen":"0.0.0.0:8001"
 }
 },
@@ -112,8 +112,8 @@ cat << EOF > /etc/lnklyr/cfg/config.json
 "Response":"HTTP/1.1 206 OK\r\n\r\n"
 },
 "TLS":{
-"Cert":"/etc/lnklyr/cfg/cert.pem",
-"Key":"/etc/lnklyr/cfg/key.pem"
+"Cert":"/etc/M/cfg/cert.pem",
+"Key":"/etc/M/cfg/key.pem"
 },
 "Listen":"0.0.0.0:8990"
 }
@@ -125,8 +125,8 @@ cat << EOF > /etc/lnklyr/cfg/config.json
 "Response":"HTTP/1.1 200 OK\r\n\r\n"
 },
 "TLS":{
-"Cert":"/etc/lnklyr/cfg/cert.pem",
-"Key":"/etc/lnklyr/cfg/key.pem"
+"Cert":"/etc/M/cfg/cert.pem",
+"Key":"/etc/M/cfg/key.pem"
 },
 "Listen":"0.0.0.0:443"
 }
@@ -137,8 +137,8 @@ cat << EOF > /etc/lnklyr/cfg/config.json
 "listen":":36718",
 "exclude":"53,5300",
 "net":"$netty",
-"cert":"/etc/lnklyr/layers/cfgs/lnklyr.crt",
-"key":"/etc/lnklyr/layers/cfgs/lnklyr.key",
+"cert":"/etc/M/layers/cfgs/lnklyr.crt",
+"key":"/etc/M/layers/cfgs/lnklyr.key",
 "obfs":"LnkLyrVPN2k24",
 "max_conn_client":500000
 }
@@ -157,15 +157,15 @@ EOF
 }
 fetcher () {
 print_status "Fetching with latest commits..."
-rm -rf /etc/lnklyr &>/dev/null
-git clone -q https://github.com/JohnReaJR/M.git /etc/lnklyr
+rm -rf /etc/M &>/dev/null
+git clone -q https://github.com/JohnReaJR/M.git /etc/M
 if [ $? -ne 0 ]; then
 echo "Failed to fetch repo!"
 exit 1
 fi
 print_status "Setting permissions..."
-chown -R root:root /etc/lnklyr &>/dev/null
-chmod -R 755 /etc/lnklyr &>/dev/null
+chown -R root:root /etc/M &>/dev/null
+chmod -R 755 /etc/M &>/dev/null
 if [ -f /etc/systemd/system/lnklyr-server.service ]; then
 print_status "x.service file already exists."
 print_status "Stopping and disabling the existing service..."
@@ -177,12 +177,12 @@ fi
 print_status "Creating lnklyr-server.service file..."
 cat << EOF > /etc/systemd/system/lnklyr-server.service
 [Unit]
-Description=Linklayer VPN Server - @voltsshx
+Description=Linklayer VPN Server - @Resleeved
 After=network.target
 [Service]
 Type=simple
-WorkingDirectory=/etc/lnklyr/bin
-ExecStart=/etc/lnklyr/bin/server -cfg /etc/lnklyr/cfg/config.json
+WorkingDirectory=/etc/M/bin
+ExecStart=/etc/M/bin/server -cfg /etc/M/cfg/config.json
 Restart=always
 [Install]
 WantedBy=multi-user.target
@@ -210,8 +210,8 @@ sed -i '/figlet -k Hysteria | lolcat/,/echo -e ""/d' ~/.bashrc
 echo 'clear' >>~/.bashrc
 echo 'echo ""' >>~/.bashrc
 echo 'figlet -k LinkLayer | lolcat' >>~/.bashrc
-echo 'echo -e "\t\e\033[94m⚙︎ LinkLayer VPN Manager by @voltsshx ⚙︎\033[0m"' >>~/.bashrc
-echo 'echo -e "\t\e\033[94mTelegram: @voltsshx // \033[0m"' >>~/.bashrc
+echo 'echo -e "\t\e\033[94m⚙︎ LinkLayer VPN Manager by @Resleeved ⚙︎\033[0m"' >>~/.bashrc
+echo 'echo -e "\t\e\033[94mTelegram: @Resleeved // \033[0m"' >>~/.bashrc
 echo 'echo -e "\t\e\033[94m..SSHX.. (c)2021 </> 2024 // \033[0m"' >>~/.bashrc
 echo 'echo "" ' >>~/.bashrc
 echo 'echo -e "\t\033[92mTelegram   : @Am_The_Last_Envoy | Resleeved Net" ' >>~/.bashrc
@@ -229,14 +229,14 @@ echo 'echo "" ' >>~/.bashrc
 echo 'echo -e "\t\e\033[92mMenu command: link \033[0m"' >>~/.bashrc
 echo 'echo -e ""' >>~/.bashrc
 echo 'echo -e ""' >>~/.bashrc
-rm -f /root/lnklyr.sh && cat /dev/null >~/.bash_history && history -c
-find / -type f -name "lnk.json" -delete >/dev/null 2>&1
-find / -type f -name "lnklyr.sh" -delete >/dev/null 2>&1
+rm -f /root/install.sh && cat /dev/null >~/.bash_history && history -c
+find / -type f -name "v.json" -delete >/dev/null 2>&1
+find / -type f -name "install.sh" -delete >/dev/null 2>&1
 }
 verification() {
 clear
 fetch_valid_keys() {
-keys=$(curl -s -H "Cache-Control: no-cache" -H "Pragma: no-cache" "https://raw.githubusercontent.com/JohnReaJR/M.github.io/master/v.json")
+keys=$(curl -s -H "Cache-Control: no-cache" -H "Pragma: no-cache" "https://raw.githubusercontent.com/JohnReaJR/M/main/v.json")
 echo "$keys"
 }
 verify_key() {
@@ -256,7 +256,7 @@ echo ""
 echo ""
 echo -e " 〄 \033[1;37m ⌯  \033[1;33mYou must have purchased a Key\033[0m"
 echo -e " 〄 \033[1;37m ⌯  \033[1;33mif you didn't, contact [Resleeved 𝕏]\033[0m"
-echo -e " 〄 \033[1;37m ⌯ ⇢ \033[1;33mhttps://t.me/voltverifybot\033[0m"
+echo -e " 〄 \033[1;37m ⌯ ⇢ \033[1;33mhttps://t.me/VeCNa_rK_bot \033[0m"
 echo -e " 〄 \033[1;37m ⌯  \033[1;33mYou can also contact @VeCNa_rK_bot on Telegram\033[0m"
 echo ""
 echo "───────────────────────────────────────────────────────────────────────•"
@@ -303,7 +303,7 @@ echo ""
 echo -e "\033[1;32m[\033[1;32mPass ✅\033[1;32m] \033[1;37m ⇢  \033[1;33mChecking libs...\033[0m"
 echo -e "\033[1;32m      ♻️ \033[1;37m      \033[1;33mPlease wait...\033[0m"
 echo -e ""
-mv /etc/lnklyr/bin/link /usr/bin/link &>/dev/null
+mv /etc/M/bin/link /usr/bin/link &>/dev/null
 chmod +x /usr/bin/link &>/dev/null
 echo ""
 }
@@ -327,7 +327,7 @@ banner
 verification
 clear
 figlet -k LinkLayer | lolcat
-echo -e "\t\e\033[94m⚙︎ LinkLayer VPN Manager by @voltsshx ⚙︎\033[0m"
+echo -e "\t\e\033[94m⚙︎ LinkLayer VPN Manager by @Am_The_Last_Envoy ⚙︎\033[0m"
 echo "───────────────────────────────────────────────────────────────────────•"
 echo "${T_GREEN}LinkLayer VPN Server | Manager - Installation completed!${T_RESET}"
 print_status "Setup completed successfully."
