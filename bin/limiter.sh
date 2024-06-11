@@ -1,5 +1,5 @@
 clear
-database="/etc/lnklyr/layers/authy/accounts.db"
+database="/etc/M/layers/authy/accounts.db"
 fun_multilogin() {
 (
 while read user; do
