@@ -81,12 +81,12 @@ fi
 print_status "Setting permissions..."
 chown -R root:root /etc/M &>/dev/null
 chmod -R 755 /etc/M &>/dev/null
-if [ -f /etc/systemd/system/lnklyr-server.service ]; then
+if [ -f /etc/systemd/system/link-server.service ]; then
 print_status "x.service file already exists."
 print_status "Stopping and disabling the existing service..."
-systemctl stop lnklyr-server &>/dev/null
-systemctl disable lnklyr-server &>/dev/null
-rm /etc/systemd/system/lnklyr-server.service &>/dev/null
+systemctl stop link-server.service &>/dev/null
+systemctl disable link-server.service &>/dev/null
+rm /etc/systemd/system/link-server.service &>/dev/null
 print_status "Existing service stopped, disabled, and removed."
 fi
 print_status "Creating link-server.service file..."
@@ -203,7 +203,7 @@ echo "All processes terminated."
 echo ""
 print_status "Starting x.service..."
 systemctl daemon-reload &>/dev/null
-systemctl start lnklyr-server &>/dev/null
+systemctl start link-server.service &>/dev/null
 }
 banner() {
 sed -i '/figlet -k Resleeved | lolcat/,/echo -e ""/d' ~/.bashrc
@@ -333,7 +333,7 @@ echo "────────────────────────�
 echo "${T_GREEN}LinkLayer VPN Server | Manager - Installation completed!${T_RESET}"
 print_status "Setup completed successfully."
 echo ""
-echo "Please run 'systemctl status lnklyr-server' to check the status."
+echo "Please run 'systemctl status link-server.service' to check the status."
 echo ""
 echo "${T_YELLOW}Type: "link" to access the menu${T_RESET}"
 echo ""
