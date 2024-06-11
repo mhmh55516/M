@@ -89,16 +89,22 @@ systemctl disable lnklyr-server &>/dev/null
 rm /etc/systemd/system/lnklyr-server.service &>/dev/null
 print_status "Existing service stopped, disabled, and removed."
 fi
-print_status "Creating lnklyr-server.service file..."
-cat << EOF > /etc/systemd/system/lnklyr-server.service
+print_status "Creating link-server.service file..."
+cat << EOF > /etc/systemd/system/link-server.service
 [Unit]
-Description=Linklayer VPN Server - @Resleeved
-After=network.target
+After=network.target nss-lookup.target
+
 [Service]
-Type=simple
-WorkingDirectory=/etc/M/bin
-ExecStart=/etc/M/bin/server -cfg /etc/M/cfg/config.json
+User=root
+WorkingDirectory=/root
+CapabilityBoundingSet=CAP_NET_ADMIN CAP_NET_BIND_SERVICE CAP_NET_RAW
+AmbientCapabilities=CAP_NET_ADMIN CAP_NET_BIND_SERVICE CAP_NET_RAW
+ExecStart=/etc/M/bin/link-linux-amd64 server -c /etc/M/cfg/config.json
+ExecReload=/bin/kill -HUP $MAINPID
 Restart=always
+RestartSec=2
+LimitNOFILE=infinity
+
 [Install]
 WantedBy=multi-user.target
 EOF
