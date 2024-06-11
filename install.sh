@@ -92,19 +92,13 @@ fi
 print_status "Creating lnk-server.service file..."
 cat << EOF > /etc/systemd/system/lnk-server.service
 [Unit]
-After=network.target nss-lookup.target
-
+Description=Linklayer VPN Server ResleevedNet
+After=network.target
 [Service]
-User=root
+Type=simple
 WorkingDirectory=/etc/M/bin
-CapabilityBoundingSet=CAP_NET_ADMIN CAP_NET_BIND_SERVICE CAP_NET_RAW
-AmbientCapabilities=CAP_NET_ADMIN CAP_NET_BIND_SERVICE CAP_NET_RAW
-ExecStart=/etc/M/bin/lnk-linux-amd64 server -c /etc/M/cfg/config.json
-ExecReload=/bin/kill -HUP $MAINPID
+ExecStart=/etc/M/bin/lnk-linux-amd64 -cfg /etc/M/cfg/config.json
 Restart=always
-RestartSec=2
-LimitNOFILE=infinity
-
 [Install]
 WantedBy=multi-user.target
 EOF
