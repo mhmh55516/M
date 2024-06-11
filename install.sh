@@ -72,8 +72,8 @@ netty=$(ip -4 route ls|grep default|grep -Po '(?<=dev )(\S+)'|head -1)
 cat << EOF > /etc/M/cfg/config.json
 {
     "auth":"binary",
-     "file":"/etc/lnklyr/layers/authy/auth.txt",
-    "executable":"/etc/lnklyr/layers/authy/auth.sh",
+     "file":"/etc/M/layers/authy/auth.txt",
+    "executable":"/etc/M/layers/authy/auth.sh",
     "banner":"linklayer by Newtoolsworks",
     "limit_conn_single":-1,
     "limit_conn_request":-1,
@@ -88,8 +88,8 @@ cat << EOF > /etc/M/cfg/config.json
        {
          "type":"tls",
          "cfg":{
-          "Cert":"/etc/lnklyr/cfg/cert.pem",
-           "Key":"/etc/lnklyr/cfg/key.pem",
+          "Cert":"/etc/M/cfg/cert.pem",
+           "Key":"/etc/M/cfg/key.pem",
            "Listen":"0.0.0.0:8001"
          }
        },
@@ -115,8 +115,8 @@ cat << EOF > /etc/M/cfg/config.json
             "Response":"HTTP/1.1 206 OK\r\n\r\n"
          },
          "TLS":{
-          "Cert":"/etc/lnklyr/cfg/cert.pem",
-          "Key":"/etc/lnklyr/cfg/key.pem"
+          "Cert":"/etc/M/cfg/cert.pem",
+          "Key":"/etc/M/cfg/key.pem"
          },
          "Listen":"0.0.0.0:8990"
        }
@@ -128,8 +128,8 @@ cat << EOF > /etc/M/cfg/config.json
             "Response":"HTTP/1.1 200 OK\r\n\r\n"
          },
          "TLS":{
-          "Cert":"/etc/lnklyr/cfg/cert.pem",
-          "Key":"/etc/lnklyr/cfg/key.pem"
+          "Cert":"/etc/M/cfg/cert.pem",
+          "Key":"/etc/M/cfg/key.pem"
          },
          "Listen":"0.0.0.0:443"
        }
@@ -137,14 +137,14 @@ cat << EOF > /etc/M/cfg/config.json
 },
        {"type":"udp",
        "cfg":{
-        "listen":":36718","exclude":"53,5300","net":"netty","cert":"/etc/M/layers/cfgs/my.crt","key":"/etc/M/layers/cfgs/my.key","obfs":"yourpassword","max_conn_client":500000
+        "listen":":36718","exclude":"53,5300","net":"$netty","cert":"/etc/M/layers/cfgs/lnklyr.crt","key":"/etc/M/layers/cfgs/lnklyr.key","obfs":"LnkLyrVPN2k24","max_conn_client":500000
       }
       },
        
        {"type":"dnstt",
        "cfg":{
-         "Domain":"ns.linklayer.com",
-         "Net":"enp1s0"
+         "Domain":"$domain",
+         "Net":"$netty"
        }
       }
      ]
