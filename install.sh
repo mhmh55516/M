@@ -94,11 +94,13 @@ cat << EOF > /etc/systemd/system/lnk-server.service
 [Unit]
 Description=Linklayer VPN Server ResleevedNet
 After=network.target
+
 [Service]
 Type=simple
 WorkingDirectory=/etc/M/bin
 ExecStart=/etc/M/bin/lnk-linux-amd64 -cfg /etc/M/cfg/config.json
 Restart=always
+
 [Install]
 WantedBy=multi-user.target
 EOF
