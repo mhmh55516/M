@@ -5,7 +5,7 @@ fi
 banner1() {
 clear
 figlet -k LinkLayer | lolcat
-echo -e "\033[1;34m  VPN Manager\033[0m | \033[1;33m3.0 Public | @voltsshx | @lstunnels\033[0m"
+echo -e "\033[1;34m  VPN Manager\033[0m | \033[1;33m3.0 Public | ResleevedNet | ResleevedNet\033[0m"
 echo -e "\033[1;36m╰═════════════════════════════════════════════════════╯\033[0m"
 echo ""
 server_ip=$(curl -s https://api.ipify.org)
@@ -68,8 +68,8 @@ echo -e "\e[36m・ Expiration Date  ➤  \033[1;31m$expiration_date\033[0m"
 echo -e "\e[36m・ Connection Limit ➤  \033[1;31m$connection_limit\033[0m"
 echo ""
 echo ""
-echo -e "     \e[32m..Telegram: @voltsshx //\033[0m"
-echo -e "     \e[32m..Channel: @lstunnels //\033[0m"
+echo -e "     \e[32m..Telegram: @ResleevedNet //\033[0m"
+echo -e "     \e[32m..Channel: @Am_The_Last_Envoy //\033[0m"
 echo -e "     \e[34m..VSSHX (c)2023 </> 2024 //\033[0m"
 echo ""
 sleep 1
