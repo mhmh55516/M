@@ -1,4 +1,4 @@
-USERS_FILE="/etc/lnklyr/layers/authy/auth.txt"
+USERS_FILE="/etc/M/layers/authy/auth.txt"
 if [ ! -f "$USERS_FILE" ]; then
 echo "Users file not found: $USERS_FILE"
 exit 1
