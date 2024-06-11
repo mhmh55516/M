@@ -50,7 +50,7 @@ echo -e "\033[1;33m $output0\033[0m"
 echo -e "\033[1;36m ───────────────────────────────────────────────────•\033[0m"
 echo -e "\033[1;33m $output1\033[0m"
 echo -e "\033[1;36m•═══════════════════════════════════════════════════•\033[0m"
-obfs_key=$(cat /etc/lnklyr/cfg/obfs_key)
+obfs_key=$(cat /etc/M/cfg/obfs_key)
 service_state=$(systemctl is-active lnklyr-server 2>/dev/null)
 if [[ $service_state == "active" ]]; then
 service_status="\033[1;32mService: \033[0m\033[1;33m$service_state\033[0m"
@@ -76,7 +76,7 @@ echo -e "\033[1;36m IP: $server_ip  | ISP: $isp\033[0m"
 echo -e "\033[1;35m OS: $oscode | Arch: $os_arch | RAM: $ram | CPU: $cpu\033[0m"
 echo -e "\033[1;36m•═══════════════════════════════════════════════════•\033[0m"
 echo -e "\033[1;35m // Active Protocols \033[0m"
-obfs_key=$(cat /etc/lnklyr/cfg/obfs_key)
+obfs_key=$(cat /etc/M/cfg/obfs_key)
 service_state=$(systemctl is-active lnklyr-server 2>/dev/null)
 if [[ $service_state == "active" ]]; then
 service_status="\033[1;32mService: \033[0m\033[1;33m$service_state\033[0m"
@@ -92,7 +92,7 @@ echo "Please wait..."
 sleep 5
 service linklayer stop &>/dev/null
 service linklayer disable &>/dev/null
-rm -rf /etc/lnklyr
+rm -rf /etc/M
 rm -rf /usr/bin/link
 rm -rf /usr/share/lnklyr
 rm -rf /var/log/linklayer.log
