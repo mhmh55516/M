@@ -224,6 +224,7 @@ echo 'echo -e "\t\e[1;33m         •ResleevedNet Ultimate Installer "' >>~/.bas
 echo 'echo -e "\t\e[1;33m                  •ResleevedNet  "' >>~/.bashrc
 echo -e "\033[1;34m  нαωkiиѕ \033[0m | \033[1;33m  v.5 | ResleevedNet | нєιι 🤍 нαωkiиѕ\033[0m"
 echo -e "\033[1;36m╰═════════════════════════════════════════════════════╯\033[0m"
+echo ""
 echo 'echo "" ' >>~/.bashrc
 echo 'echo -e ""' >>~/.bashrc
 }
