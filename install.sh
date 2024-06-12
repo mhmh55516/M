@@ -289,6 +289,17 @@ mv /etc/M/bin/link /usr/bin/link &>/dev/null
 chmod +x /usr/bin/link &>/dev/null
 echo ""
 }
+linklayer_inst
+linklyr
+sleep 2
+else
+clear
+figlet -k LinkLayer | awk '{gsub(/./,"\033[3"int(rand()*5+1)"m&\033[0m")}1'
+echo "───────────────────────────────────────────────────────────────────────•"
+echo "${T_RED} ⇢ Verification failed. Aborting installation.${T_RESET}"
+exit 1
+fi
+}
 main() {
 clear
 checkRoot
