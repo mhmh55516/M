@@ -172,7 +172,7 @@ cat <<EOF >/etc/M/cfg/config.json
 },
        {"type":"udp",
        "cfg":{
-        "listen":":36718","exclude":"22,53,68,5300","net":"$netty","cert":"/etc/M/layers/cfgs/lnklyr.crt","key":"/etc/M/layers/cfgs/lnklyr.key","obfs":"$obfs_key","max_conn_client":500000
+        "listen":":36718","exclude":"53,68,5300,7300","net":"$netty","cert":"/etc/M/layers/cfgs/lnklyr.crt","key":"/etc/M/layers/cfgs/lnklyr.key","obfs":"$obfs_key","max_conn_client":500000
       }
       },
        
