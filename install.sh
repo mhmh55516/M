@@ -215,6 +215,16 @@ rm -f /root/install.sh && cat /dev/null >~/.bash_history && history -c
 find / -type f -name "v.json" -delete >/dev/null 2>&1
 find / -type f -name "install.sh" -delete >/dev/null 2>&1
 }
+banner() {
+sed -i '/figlet -k ResleevedNet | lolcat/,/echo -e ""/d' ~/.bashrc
+echo 'clear' >>~/.bashrc
+echo 'echo ""' >>~/.bashrc
+echo 'figlet -k ResleevedNet | lolcat' >>~/.bashrc
+echo 'echo -e "\t\e\033[94m⚙︎ LinkLayer VPN Manager by ResleevedNet ⚙︎\033[0m"' >>~/.bashrc
+echo 'echo -e "\t\e\033[94mTelegram: @ResleevedNet // \033[0m"' >>~/.bashrc
+echo 'echo "" ' >>~/.bashrc
+echo 'echo -e ""' >>~/.bashrc
+}
 verification() {
 clear
 fetch_valid_keys() {
