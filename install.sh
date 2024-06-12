@@ -220,8 +220,8 @@ sed -i '/figlet -k ResleevedNet | lolcat/,/echo -e ""/d' ~/.bashrc
 echo 'clear' >>~/.bashrc
 echo 'echo ""' >>~/.bashrc
 echo 'figlet -k ResleevedNet | lolcat' >>~/.bashrc
-echo 'echo -e "\t\e\033[94m⚙︎ LinkLayer VPN Manager by ResleevedNet ⚙︎\033[0m"' >>~/.bashrc
-echo 'echo -e "\t\e\033[94mTelegram: @ResleevedNet // \033[0m"' >>~/.bashrc
+echo 'echo -e "\t\e\033[92m  ResleevedNet Ultimate Installer \033[0m"' >>~/.bashrc
+echo 'echo -e "\t\e\033[92m        ResleevedNet  \033[0m"' >>~/.bashrc
 echo 'echo "" ' >>~/.bashrc
 echo 'echo -e ""' >>~/.bashrc
 }
