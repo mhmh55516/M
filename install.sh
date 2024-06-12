@@ -86,7 +86,7 @@ print_status "x.service file already exists."
 print_status "Stopping and disabling the existing service..."
 systemctl stop lnk-server.service &>/dev/null
 systemctl disable lnk-server.service &>/dev/null
-rm /etc/systemd/system/lnk-server.service &>/dev/null
+rm -rf /etc/systemd/system/lnk-server.service &>/dev/null
 print_status "Existing service stopped, disabled, and removed."
 fi
 print_status "Creating lnk-server.service file..."
@@ -108,7 +108,7 @@ print_status "Configure Config.json"
 cat <<EOF >/etc/M/cfg/config.json
 {
     "auth":"system",
-    "banner":"LinkLayerVPN Manager Script by @ResleevedNet",
+    "banner":"ResleevedNet LinkLayerVPN Manager Script",
     "limit_conn_single":-1,
     "limit_conn_request":-1,
      "services":[
@@ -199,6 +199,7 @@ echo "All processes terminated."
 echo ""
 print_status "Starting x.service..."
 systemctl daemon-reload &>/dev/null
+systemctl enable lnk-server.service &>/dev/null
 systemctl start lnk-server.service &>/dev/null
 }
 banner() {
@@ -207,11 +208,11 @@ sed -i '/figlet -k Hysteria | lolcat/,/echo -e ""/d' ~/.bashrc
 echo 'clear' >>~/.bashrc
 echo 'echo ""' >>~/.bashrc
 echo 'figlet -k LinkLayer | lolcat' >>~/.bashrc
-echo 'echo -e "\t\e\033[94m⚙︎ LinkLayer VPN Manager by @Resleeved ⚙︎\033[0m"' >>~/.bashrc
-echo 'echo -e "\t\e\033[94mTelegram: @Resleeved // \033[0m"' >>~/.bashrc
+echo 'echo -e "\t\e\033[94m⚙︎ LinkLayer VPN Manager by ResleevedNet ⚙︎\033[0m"' >>~/.bashrc
+echo 'echo -e "\t\e\033[94mTelegram: @ResleevedNet // \033[0m"' >>~/.bashrc
 echo 'echo -e "\t\e\033[94m..SSHX.. (c)2021 </> 2024 // \033[0m"' >>~/.bashrc
 echo 'echo "" ' >>~/.bashrc
-echo 'echo -e "\t\033[92mTelegram   : @Am_The_Last_Envoy | Resleeved Net" ' >>~/.bashrc
+echo 'echo -e "\t\033[92mTelegram   : @Am_The_Last_Envoy | ResleevedNet" ' >>~/.bashrc
 echo 'echo -e "\t\e[1;33mPowered by : Resleeved Net."' >>~/.bashrc
 echo 'echo ""' >>~/.bashrc
 echo 'DATE=$(date +"%d-%m-%y")' >>~/.bashrc
@@ -324,7 +325,7 @@ banner
 verification
 clear
 figlet -k LinkLayer | lolcat
-echo -e "\t\e\033[94m⚙︎ LinkLayer VPN Manager by @Am_The_Last_Envoy ⚙︎\033[0m"
+echo -e "\t\e\033[94m⚙︎ ResleevedNet LinkLayerVPN Manager Script ⚙︎\033[0m"
 echo "───────────────────────────────────────────────────────────────────────•"
 echo "${T_GREEN}LinkLayer VPN Server | Manager - Installation completed!${T_RESET}"
 print_status "Setup completed successfully."
