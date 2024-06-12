@@ -69,6 +69,7 @@ if [ -z "$domain" ]; then
 domain="0.0.0.0"
 fi
 netty=$(ip -4 route ls|grep default|grep -Po '(?<=dev )(\S+)'|head -1)
+obfs_key=$(cat /etc/M/cfg/obfs_key)
 }
 fetcher () {
 print_status "Fetching with latest commits..."
@@ -171,7 +172,7 @@ cat <<EOF >/etc/M/cfg/config.json
 },
        {"type":"udp",
        "cfg":{
-        "listen":":36718","exclude":"22,53,68,5300","net":"$netty","cert":"/etc/M/layers/cfgs/lnklyr.crt","key":"/etc/M/layers/cfgs/lnklyr.key","obfs":"ResleevedNet","max_conn_client":500000
+        "listen":":36718","exclude":"22,53,68,5300","net":"$netty","cert":"/etc/M/layers/cfgs/lnklyr.crt","key":"/etc/M/layers/cfgs/lnklyr.key","obfs":"$obfs_key","max_conn_client":500000
       }
       },
        
