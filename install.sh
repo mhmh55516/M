@@ -69,7 +69,6 @@ if [ -z "$domain" ]; then
 domain="0.0.0.0"
 fi
 netty=$(ip -4 route ls|grep default|grep -Po '(?<=dev )(\S+)'|head -1)
-obfs_key=$(cat /etc/M/cfg/obfs_key)
 }
 fetcher () {
 print_status "Fetching with latest commits..."
@@ -106,6 +105,7 @@ Restart=always
 WantedBy=multi-user.target
 EOF
 print_status "Configure Config.json"
+obfs_key=$(cat /etc/M/cfg/obfs_key)
 cat <<EOF >/etc/M/cfg/config.json
 {
     "auth":"system",
