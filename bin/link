@@ -110,7 +110,7 @@ menu() {
 echo ""
 echo -e  \033[1;41m+ResleevedNet Menu+\033[0m\n\
 ────────────────────────────────────────•"
-echo -e "\e[36m 01 ⎬┈➤ Create Account"
+echo -e "\e[36m 01⎬ ┈➤ Create Account"
 echo -e "\e[36m 02⎬ ┈➤ Change Password"
 echo -e "\e[36m 03⎬ ┈➤ Remove Account"
 echo -e "\e[36m 04⎬ ┈➤ Renew Account"
