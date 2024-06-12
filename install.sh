@@ -188,13 +188,23 @@ print_status "Terminating processes running on specified ports..."
 echo ""
 echo "$(netstat -tulpn | grep -E '(:80|:443|:8000|:8001|:8002|:8990|:36718)' | awk '{print $4}')"
 echo ""
-kill "$(lsof -t -i:80)" && print_status "Process on port 80 terminated."
-kill "$(lsof -t -i:443)" && print_status "Process on port 443 terminated."
-kill "$(lsof -t -i:8000)" && print_status "Process on port 8000 terminated."
-kill "$(lsof -t -i:8001)" && print_status "Process on port 8001 terminated."
-kill "$(lsof -t -i:8002)" && print_status "Process on port 8002 terminated."
-kill "$(lsof -t -i:8990)" && print_status "Process on port 8990 terminated."
-kill "$(lsof -t -i:36718)" && print_status "Process on port 36718 terminated."
+terminate_process_on_port() {
+local port=$1
+local pid
+pid=$(lsof -t -i:"$port")
+if [ -n "$pid" ]; then
+kill "$pid" && echo "Process on port $port terminated."
+else
+echo "No process found on port $port."
+fi
+}
+terminate_process_on_port 80
+terminate_process_on_port 443
+terminate_process_on_port 8000
+terminate_process_on_port 8001
+terminate_process_on_port 8002
+terminate_process_on_port 8990
+terminate_process_on_port 36718
 echo "All processes terminated."
 echo ""
 print_status "Starting x.service..."
