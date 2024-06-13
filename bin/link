@@ -188,13 +188,11 @@ reboot
 banner
 uninstallation
 sleep 2
-clear
 exit 0
 ;;
 0)
 echo ""
 echo "Exiting..."
-clear
 exit 0
 ;;
 *)
