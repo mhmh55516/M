@@ -7,7 +7,6 @@ clear
 figlet -k LinkLayer | lolcat
 echo -e "\033[1;34m   ResleevedNet v.5 \033[0m  | \033[1;33m v.5 Release  | ResleevedNet \033[0m"
 echo -e "\033[1;36m╰═════════════════════════════════════════════════════╯\033[0m"
-echo ""
 server_ip=$(curl -s https://api.ipify.org)
 echo -e "\n\033[1;33m OBFS Key: \033[0m$(cat /etc/M/cfg/obfs_key)"
 echo -e "\033[1;36m ───────────────────────────────────────────────────•\033[0m"
