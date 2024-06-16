@@ -106,6 +106,9 @@ WantedBy=multi-user.target
 EOF
 print_status "Configure Config.json"
 obfs_key=$(cat /etc/M/cfg/obfs_key)
+cat <<EOF >/etc/M/cfg/domain
+$domain
+EOF
 cat <<EOF >/etc/M/cfg/config.json
 {
     "auth":"system",
