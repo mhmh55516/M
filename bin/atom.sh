@@ -16,8 +16,7 @@ banner1
 echo -e "\033[1;33mCreate Account \033[0m"
 echo -e "\033[1;36m•═══════════════════════════════════════════════════•\033[0m"
 echo -e "\033[1;31mALERT: Password must not be less than 3 characters.\033[0m"
-echo -ne "\033[1;32m "
-read -p "Username: " username
+echo -ne "\033[1;32m "read -p "Username: " username
 if [[ -z "$username" ]]; then
 echo -e "\033[1;31mError: Username cannot be empty.\033[0m"
 exit 1
