@@ -44,7 +44,7 @@ else
 if cat /etc/passwd | grep -w $username > /dev/null; then
 echo ""
 pkill -f "$username" > /dev/null 2>&1
-deluser --force $username > /dev/null 2>&1
+userdel --remove $username > /dev/null 2>&1
 echo -e "\E[41;1;37m・ User $username successfully removed! \E[0m"
 grep -v ^$username[[:space:]] /etc/M/layers/authy/accounts.db > /tmp/ph ; cat /tmp/ph > /etc/M/layers/authy/accounts.db
 rm /etc/M/layers/authy/passwds/$username 1>/dev/null 2>/dev/null
@@ -52,7 +52,7 @@ exit 1
 elif [[ "$(cat "$database"| grep -w $username| wc -l)" -ne "0" ]]; then
 ps x | grep $username | grep -v grep | grep -v pt > /tmp/rem
 if [[ `grep -c $username /tmp/rem` -eq 0 ]]; then
-deluser --force $username > /dev/null 2>&1
+userdel --remove $username > /dev/null 2>&1
 echo ""
 echo -e "\E[41;1;37m・ Account $username successfully removed! \E[0m"
 grep -v ^$username[[:space:]] /etc/M/layers/authy/accounts.db > /tmp/ph ; cat /tmp/ph > /etc/M/layers/authy/accounts.db
@@ -62,7 +62,7 @@ else
 echo ""
 echo "・ Account logged out. Disconnecting..."
 pkill -f "$username" > /dev/null 2>&1
-deluser --force $username > /dev/null 2>&1
+userdel --remove $username > /dev/null 2>&1
 echo -e "\E[41;1;37m・ Account $username successfully removed! \E[0m"
 grep -v ^$username[[:space:]] /etc/M/layers/authy/accounts.db > /tmp/ph ; cat /tmp/ph > /etc/M/layers/authy/accounts.db
 rm /etc/M/layers/authy/passwds/$username 1>/dev/null 2>/dev/null
