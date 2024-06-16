@@ -15,7 +15,7 @@ echo -e "\033[1;36m ────────────────────
 banner1
 echo -e "\033[1;35m    // Create Account \033[0m"
 echo -e "\033[1;36m•═══════════════════════════════════════════════════•\033[0m"
-echo -e "\033[1;31mALERT: Password must not be less than 8 characters.\033[0m"
+echo -e "\033[1;31mALERT: Password must not be less than 3 characters.\033[0m"
 echo -ne "\033[1;32m "
 read -p "Username: " username
 if [[ -z "$username" ]]; then
