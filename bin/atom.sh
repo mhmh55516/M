@@ -5,7 +5,7 @@ fi
 banner1() {
 clear
 figlet -k LinkLayer | lolcat
-echo -e "\033[1;34m  VPN Manager\033[0m | \033[1;33m3.0 Public | ResleevedNet | ResleevedNet\033[0m"
+echo -e "\033[1;34m   ResleevedNet v.5 \033[0m  | \033[1;33m v.5 Release  | ResleevedNet \033[0m"
 echo -e "\033[1;36m╰═════════════════════════════════════════════════════╯\033[0m"
 echo ""
 server_ip=$(curl -s https://api.ipify.org)
@@ -28,8 +28,8 @@ echo ""
 if [[ -z "$password" ]]; then
 echo -e "\033[1;31mError: Password cannot be empty.\033[0m"
 exit 1
-elif [[ ${#password} -lt 8 ]]; then
-echo -e "\033[1;31mError: Password must be at least 8 characters long.\033[0m"
+elif [[ ${#password} -lt 3 ]]; then
+echo -e "\033[1;31mError: Password must be at least 3 characters long.\033[0m"
 exit 1
 fi
 read -p "Number of days until expiration: " days
@@ -67,9 +67,7 @@ echo -e "\e[36m・ OBFS Key         ➤  \033[1;31m$(cat /etc/M/cfg/obfs_key)"
 echo -e "\e[36m・ Expiration Date  ➤  \033[1;31m$expiration_date\033[0m"
 echo -e "\e[36m・ Connection Limit ➤  \033[1;31m$connection_limit\033[0m"
 echo ""
-echo ""
-echo -e "     \e[32m..Telegram: @ResleevedNet //\033[0m"
-echo -e "     \e[32m..Channel: @Am_The_Last_Envoy //\033[0m"
-echo -e "     \e[34m..VSSHX (c)2023 </> 2024 //\033[0m"
+echo -e "     \e[32m..Telegram: @ResleevedNet \033[0m"
+echo -e "     \e[32m..Channel: @Am_The_Last_Envoy \033[0m"
 echo ""
 sleep 1
