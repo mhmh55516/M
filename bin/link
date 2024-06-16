@@ -132,7 +132,7 @@ case $choice in
 1)
 clear
 cd /etc/M/bin && ./atom.sh; cd
-read -n 1 -s -r -p "  Press any key to return ↩︎"
+read -n 1 -s -r -p " Press any key to return ↩︎"
 ;;
 2)
 clear
@@ -142,7 +142,7 @@ read -n 1 -s -r -p "  Press any key to return ↩︎"
 3)
 clear
 cd /etc/M/bin && ./killie.sh; cd
-read -n 1 -s -r -p "  Press any key to return ↩︎"
+read -n 1 -s -r -p " Press any key to return ↩︎"
 ;;
 4)
 clear
@@ -152,7 +152,7 @@ read -n 1 -s -r -p "  Press any key to return ↩︎"
 5)
 clear
 cd /etc/M/bin && ./info.sh; cd
-read -n 1 -s -r -p "  Press any key to return ↩︎"
+read -n 1 -s -r -p " Press any key to return ↩︎"
 ;;
 6)
 banner
@@ -161,7 +161,7 @@ echo -e "\033[1;36m────────────────────�
 lsof -i :80,443,8000,8001,8002,8990,36718 | awk 'NR==1{print; next} {print "\033[1;34m・ " $0 "\033[0m"}'
 echo -e "\033[1;36m───────────────────────────────────────────────────\033[0m"
 echo -e ""
-read -n 1 -s -r -p "  Press any key to return ↩︎"
+read -n 1 -s -r -p " Press any key to return ↩︎"
 ;;
 7)
 banner
