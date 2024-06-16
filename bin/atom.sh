@@ -23,8 +23,7 @@ echo -e "\033[1;31mError: Username cannot be empty.\033[0m"
 exit 1
 fi
 echo -ne "\033[1;32m"
-read -sp "Password: " password
-echo ""
+read -p "Password: " password
 if [[ -z "$password" ]]; then
 echo -e "\033[1;31mError: Password cannot be empty.\033[0m"
 exit 1
