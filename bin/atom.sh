@@ -49,6 +49,7 @@ usermod --password "$hashed_password" "$username"
 chage -E "$expiration_date" "$username"
 echo "$username:$password:$connection_limit" >> /etc/M/layers/authy/accounts.txt
 echo "\033[0m"
+mkdir /etc/M/layers/authy/passwds
 echo "$password" >/etc/M/layers/authy/passwds/$username
 echo "$username $connection_limit" >>/etc/M/layers/authy/accounts.db
 clear
