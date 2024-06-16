@@ -13,7 +13,7 @@ echo -e "\n\033[1;33m OBFS Key: \033[0m$(cat /etc/M/cfg/obfs_key)"
 echo -e "\033[1;36m ───────────────────────────────────────────────────•\033[0m"
 }
 banner1
-echo -e "\033[1;35m    // Create Account \033[0m"
+echo -e "\033[1;33mCreate Account \033[0m"
 echo -e "\033[1;36m•═══════════════════════════════════════════════════•\033[0m"
 echo -e "\033[1;31mALERT: Password must not be less than 3 characters.\033[0m"
 echo -ne "\033[1;32m "
@@ -23,7 +23,7 @@ echo -e "\033[1;31mError: Username cannot be empty.\033[0m"
 exit 1
 fi
 echo -ne "\033[1;32m"
-read -sp "Password: " password
+read -p "Password: " password
 echo ""
 if [[ -z "$password" ]]; then
 echo -e "\033[1;31mError: Password cannot be empty.\033[0m"
