@@ -51,5 +51,5 @@ echo -e "\033[0;34m・ ───────────────────
 done
 echo ""
 _tuser=$(awk -F: '$3>=1000 {print $1}' /etc/passwd | grep -v nobody | wc -l)
-echo -e "\033[1;33m  ⌯ Total.Acc: \033[1;37m$_tuser  \033[0m"
+echo -e "\033[1;33m⌯ Total.Acc: \033[1;37m$_tuser  \033[0m"
 echo ""
