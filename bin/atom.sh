@@ -67,6 +67,6 @@ echo -e "\e[36m・ OBFS Key         ➤  \033[1;31m$(cat /etc/M/cfg/obfs_key)"
 echo -e "\e[36m・ Expiration Date  ➤  \033[1;31m$expiration_date\033[0m"
 echo -e "\e[36m・ Connection Limit ➤  \033[1;31m$connection_limit\033[0m"
 echo ""
-echo -e "\033[1;33m Telegram: @ResleevedNet \033[0m"
-echo -e "\033[1;33m Channel: @Am_The_Last_Envoy \033[0m"
+echo -e "\033[1;33mTelegram: @ResleevedNet \033[0m"
+echo -e "\033[1;33mChannel: @Am_The_Last_Envoy \033[0m"
 sleep 1
