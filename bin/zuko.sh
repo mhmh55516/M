@@ -5,7 +5,7 @@ fi
 banner1() {
 clear
 figlet -k LinkLayer | lolcat
-echo -e "\033[1;34m  VPN Manager\033[0m | \033[1;33m3.0 Public | @ResleevedNet | @Am_The_Last_Envoy\033[0m"
+echo -e "\033[1;34m   ResleevedNet v.5 \033[0m  | \033[1;33m v.5 Release  | ResleevedNet \033[0m"
 echo -e "\033[1;36m╰═════════════════════════════════════════════════════╯\033[0m"
 echo ""
 }
