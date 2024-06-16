@@ -43,13 +43,23 @@ exit 1
 fi
 expiration_date=$(date -d "+$days days" "+%Y-%m-%d")
 useradd -e "$expiration_date" -s /bin/false -M "$username" >/dev/null 2>&1
-hashed_password=$(openssl passwd -1 "$password")
-usermod --password "$hashed_password" "$username"
+if [ $? -ne 0 ]; then
+echo -e "\033[1;31mError: Failed to create user.\033[0m"
+exit 1
+fi
+echo "$username:$password" | chpasswd
+if [ $? -ne 0 ]; then
+echo -e "\033[1;31mError: Failed to set password for user $username.\033[0m"
+userdel "$username"
+exit 1
+fi
 chage -E "$expiration_date" "$username"
+mkdir -p /etc/M/layers/authy/passwds
 echo "$username:$password:$connection_limit" >> /etc/M/layers/authy/accounts.txt
 echo "\033[0m"
-echo "$password" >/etc/M/layers/authy/passwds/$username
+echo "$password" > /etc/lnklyr/layers/authy/passwds/$username
 echo "$username $connection_limit" >>/etc/M/layers/authy/accounts.db
+xPubkey=$(cat /etc/M/genPubkey)
 clear
 banner1
 echo ""
