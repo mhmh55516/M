@@ -122,7 +122,6 @@ echo -e "\e[36m 10⎬╰┈➤ Backup/Restore (not implemeted)"
 echo -e "\e[36m 11⎬╰┈➤ Uninstall"
 echo -e "\e[36m 00⎬╰┈➤ Exit"
 echo -e "─────────────────────────────────────────────────────────•\033[0m"
-echo ""
 }
 call_menu() {
 while true; do
