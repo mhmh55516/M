@@ -108,7 +108,7 @@ echo ""
 }
 menu() {
 echo -e "\033[1;33m ResleevedNet Menu \033[0m"
-echo -e "\033[1;36m────────────────────────────────────────────────•\033[0m"
+echo -e "\033[1;36m────────────────────────────────────────────────────•\033[0m"
 echo -e "\e[36m 01⎬╰┈➤ Create Account"
 echo -e "\e[36m 02⎬╰┈➤ Change Password"
 echo -e "\e[36m 03⎬╰┈➤ Remove Account"
@@ -121,7 +121,7 @@ echo -e "\e[36m 09⎬╰┈➤ Online Accounts (not implemeted)"
 echo -e "\e[36m 10⎬╰┈➤ Backup/Restore (not implemeted)"
 echo -e "\e[36m 11⎬╰┈➤ Uninstall"
 echo -e "\e[36m 00⎬╰┈➤ Exit \033[0m"
-echo -e "\033[1;36m──────────────────────────────────────────────•\033[0m"
+echo -e "\033[1;36m────────────────────────────────────────────────────•\033[0m"
 }
 call_menu() {
 while true; do
