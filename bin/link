@@ -104,7 +104,6 @@ echo ""
 echo "Please wait..."
 sleep 3
 echo "Uninstallation complete."
-echo ""
 }
 menu() {
 echo -e "\033[1;33m ResleevedNet Menu \033[0m"
