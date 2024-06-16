@@ -127,7 +127,7 @@ call_menu() {
 while true; do
 banner
 menu
-read -p "Enter your choice: " choice
+read -p " Enter your choice: " choice
 case $choice in
 1)
 clear
