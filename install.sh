@@ -112,7 +112,7 @@ EOF
 cat <<EOF >/etc/M/cfg/config.json
 {
     "auth":"system",
-    "banner":"    ✅ ResleevedNet v.5 Ultimate Script ✅",
+    "banner":"          🔥   ResleevedNet v.5 Ultimate Script   🔥",
     "limit_conn_single":-1,
     "limit_conn_request":-1,
      "services":[
