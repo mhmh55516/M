@@ -280,13 +280,13 @@ banner
 verification
 clear
 figlet -k LinkLayer | lolcat
-echo -e "033[94m⚙︎ ResleevedNet LinkLaYerVPN Manager Script ⚙︎\033[0m"
+echo -e "\033[1;94m⚙︎ ResleevedNet LinkLaYerVPN Manager Script ⚙︎\033[0m"
 echo "───────────────────────────────────────────────────────────────────────•"
 echo "${T_GREEN}LinkLaYerVPN Server | Manager - Installation completed!${T_RESET}"
 echo ""
-echo "Please run 'systemctl status lnk-server.service' to check the status."
+echo -e "\033[1;33mPlease run 'systemctl status lnk-server.service' to check the status. \033[0m"
 echo ""
-echo "${T_YELLOW}Type: "link" to access the menu${T_RESET}"
+echo -e "\033[1;34mType: "link" to access the menu\033[0m"
 echo ""
 read -p " ┈➤ Press any key to exit ↩︎" key
 }
