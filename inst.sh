@@ -251,13 +251,11 @@ echo "${T_GREEN} ⇢ Proceeding with the installation...${T_RESET}"
 echo ""
 echo ""
 sleep 1
-clear
 linklayer_inst() {
 configger
 fetcher
 }
 linklyr() {
-clear
 figlet -k LinkLayer | awk '{gsub(/./,"\033[3"int(rand()*5+1)"m&\033[0m")}1'
 echo "───────────────────────────────────────────────────────────────────────•"
 echo ""
@@ -271,7 +269,6 @@ echo ""
 linklayer_inst
 linklyr
 sleep 2
-exit 1
 }
 main() {
 clear
