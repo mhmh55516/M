@@ -233,6 +233,56 @@ echo ""
 echo 'echo "" ' >>~/.bashrc
 echo 'echo -e ""' >>~/.bashrc
 }
+verification() {
+clear
+fetch_valid_keys() {
+keys=$(curl -s -H "Cache-Control: no-cache" -H "Pragma: no-cache" "https://raw.githubusercontent.com/JohnReaJR/M/main/v.json")
+echo "$keys"
+}
+verify_key() {
+local key_to_verify="$1"
+local valid_keys="$2"
+if [[ $valid_keys == *"$key_to_verify"* ]]; then
+return 0 # Key is valid
+else
+return 1 # Key is not valid
+fi
+}
+valid_keys=$(fetch_valid_keys)
+echo ""
+figlet -k LinkLayer | awk '{gsub(/./,"\033[3"int(rand()*5+1)"m&\033[0m")}1' && figlet -k VPN | awk '{gsub(/./,"\033[3"int(rand()*5+1)"m&\033[0m")}1'
+echo "───────────────────────────────────────────────────────────────────────•"
+echo ""
+echo ""
+echo -e " 〄 \033[1;37m ⌯  \033[1;33mYou must have purchased a Key\033[0m"
+echo -e " 〄 \033[1;37m ⌯  \033[1;33mif you didn't, contact [Resleeved 𝕏]\033[0m"
+echo -e " 〄 \033[1;37m ⌯ ⇢ \033[1;33mhttps://t.me/VeCNa_rK_bot \033[0m"
+echo -e " 〄 \033[1;37m ⌯  \033[1;33mYou can also contact @VeCNa_rK_bot on Telegram\033[0m"
+echo ""
+echo "───────────────────────────────────────────────────────────────────────•"
+read -p " ⇢ Please enter the Installation key: " user_key
+user_key=$(echo "$user_key" | tr -d '[:space:]')
+if [[ ${#user_key} -ne 10 ]]; then
+echo "${T_RED} ⇢ Verification failed. Aborting installation.${T_RESET}"
+find / -type f -name "v.json" -delete >/dev/null 2>&1
+rm -f /root/v.json >/dev/null 2>&1
+rm -f v.json >/dev/null 2>&1
+echo ""
+exit 1
+fi
+if verify_key "$user_key" "$valid_keys"; then
+sleep 2
+echo "${T_GREEN} ⇢ Verification successful.${T_RESET}"
+echo "${T_GREEN} ⇢ Proceeding with the installation...${T_RESET}"
+echo ""
+echo ""
+echo -e "\033[1;32m ♻️ Please wait...\033[0m"
+find / -type f -name "v.json" -delete >/dev/null 2>&1
+rm -f /root/v.json >/dev/null 2>&1
+rm -f v.json >/dev/null 2>&1
+sleep 1
+clear
+clear
 validate_length() {
 local input_string="$1"
 local min_length="$2"
@@ -260,11 +310,13 @@ echo ""
 linklayer_inst
 linklyr
 sleep 2
+else
 clear
 figlet -k LinkLayer | awk '{gsub(/./,"\033[3"int(rand()*5+1)"m&\033[0m")}1'
 echo "───────────────────────────────────────────────────────────────────────•"
-echo "${T_RED} ⇢ Verification Successful Finishing installation.${T_RESET}"
+echo "${T_RED} ⇢ Verification failed. Aborting installation.${T_RESET}"
 exit 1
+fi
 }
 main() {
 clear
@@ -272,6 +324,7 @@ checkRoot
 script_header
 update_packages
 banner
+verification
 clear
 figlet -k LinkLayer | lolcat
 echo -e "033[94m⚙︎ ResleevedNet LinkLaYerVPN Manager Script ⚙︎\033[0m"
