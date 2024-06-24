@@ -5,6 +5,13 @@ echo -e "\e[91mHey dude, run me as root!\e[0m" # Red text
 exit 1
 fi
 }
+YELLOW='\033[1;33m'
+NC='\033[0m'
+T_BOLD=$(tput bold)
+T_GREEN=$(tput setaf 2)
+T_YELLOW=$(tput setaf 3)
+T_RED=$(tput setaf 1)
+T_RESET=$(tput sgr0)
 script_header() {
 clear
 echo ""
@@ -280,7 +287,7 @@ banner
 verification
 clear
 figlet -k LinkLayer | lolcat
-echo -e "\033[1;94m⚙︎ ResleevedNet LinkLaYerVPN Manager Script ⚙︎\033[0m"
+echo -e "\033[94m⚙︎ ResleevedNet LinkLaYerVPN Manager Script ⚙︎\033[0m"
 echo "───────────────────────────────────────────────────────────────────────•"
 echo "${T_GREEN}LinkLaYerVPN Server | Manager - Installation completed!${T_RESET}"
 echo ""
