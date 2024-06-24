@@ -250,6 +250,7 @@ echo "${T_GREEN} ⇢ Verification successful.${T_RESET}"
 echo "${T_GREEN} ⇢ Proceeding with the installation...${T_RESET}"
 echo ""
 echo ""
+echo -e "\033[1;32m ♻️ Please wait...\033[0m"
 sleep 1
 linklayer_inst() {
 configger
