@@ -244,15 +244,13 @@ echo -e " 〄 \033[1;37m ⌯ ⇢ \033[1;33mhttps://t.me/VeCNa_rK_bot \033[0m"
 echo -e " 〄 \033[1;37m ⌯  \033[1;33mYou can also contact @VeCNa_rK_bot on Telegram\033[0m"
 echo ""
 echo "───────────────────────────────────────────────────────────────────────•"
-read -p " ⇢ Please enter the Installation key" key
-exit 1
+read -p " ┈➤ Please enter the Installation key ↩︎" key
 sleep 2
 echo "${T_GREEN} ⇢ Verification successful.${T_RESET}"
 echo "${T_GREEN} ⇢ Proceeding with the installation...${T_RESET}"
 echo ""
 echo ""
 sleep 1
-clear
 clear
 linklayer_inst() {
 configger
