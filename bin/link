@@ -189,7 +189,9 @@ exit 0
 0)
 echo ""
 echo "Exiting..."
+clear
 exit 0
+banner
 ;;
 *)
 echo ""
