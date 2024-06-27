@@ -13,8 +13,7 @@ T_YELLOW=$(tput setaf 3)
 T_RED=$(tput setaf 1)
 T_RESET=$(tput sgr0)
 script_header() {
-clear
-echo ""
+clear $$ clear
 echo ".-.   .-..---.  ,-.  _______     "
 echo " \ \ / // .-. ) | | |__   __|    "
 echo "  \ V / | | |(_)| |   )| |       "
@@ -22,9 +21,6 @@ echo "   ) /  | | | | | |  (_) |       "
 echo "  (_)   \ \`-' / | \`--. | |       "
 echo "         )---'  |( __.'\`-'       "
 echo "        (_)     (_)              "
-echo "  Telegram: @VeCNa_rK_bot //"
-echo "  ..SSHX.. (c)2021 </> 2024 //"
-echo ""
 echo -e "\e[1m\e[34m****************************************************"
 echo -e "  Installation & Auto Config for \e[1;36mLinkLayer VPN\e[0m"
 echo -e "    (Version 3.0 Public) - by: @VeCNa_rK_bot // @Resleeved"
@@ -45,11 +41,7 @@ echo "   ) /  | | | | | |  (_) |       "
 echo "  (_)   \ \`-' / | \`--. | |       "
 echo "         )---'  |( __.'\`-'       "
 echo "        (_)     (_)              "
-echo "  Telegram: @VeCNa_rK_bot //"
-echo "  ..SSHX.. (c)2021 </> 2024 //"
-echo ""
-echo -e "\033[1;32m[\033[1;32mPass ✅\033[1;32m] \033[1;37m ⇢  \033[1;33mCollecting binaries...\033[0m"
-echo -e "\033[1;32m      ♻️ \033[1;37m      \033[1;33mPlease wait...\033[0m"
+
 echo -e ""
 sudo apt-get update && sudo apt-get upgrade -y
 local dependencies=("curl" "bc" "grep" "wget" "nano" "net-tools" "figlet" "lolcat" "git" "netcat" "openssl")
@@ -216,14 +208,13 @@ terminate_process_on_port 8001
 terminate_process_on_port 8002
 terminate_process_on_port 8990
 terminate_process_on_port 36718
+clear
 echo "All processes terminated."
-echo ""
-print_status "Starting x.service..."
+print_status "Starting Linklayer Service..."
 systemctl daemon-reload &>/dev/null
 systemctl enable lnk-server.service &>/dev/null
 systemctl start lnk-server.service &>/dev/null
 rm -f /root/install.sh && cat /dev/null >~/.bash_history && history -c
-find / -type f -name "v.json" -delete >/dev/null 2>&1
 find / -type f -name "install.sh" -delete >/dev/null 2>&1
 }
 banner() {
@@ -242,22 +233,17 @@ echo 'echo -e ""' >>~/.bashrc
 }
 verification() {
 figlet -k LinkLayer | awk '{gsub(/./,"\033[3"int(rand()*5+1)"m&\033[0m")}1' && figlet -k VPN | awk '{gsub(/./,"\033[3"int(rand()*5+1)"m&\033[0m")}1'
-echo "───────────────────────────────────────────────────────────────────────•"
-echo ""
-echo ""
+echo -e "\033[1;36m───────────────────────────────────────────────────────────────────────•\033[0m"
 echo -e " 〄 \033[1;37m ⌯  \033[1;33mYou must have purchased a Key\033[0m"
-echo -e " 〄 \033[1;37m ⌯  \033[1;33mif you didn't, contact [Resleeved 𝕏]\033[0m"
+echo -e " 〄 \033[1;37m ⌯  \033[1;33mif you didn't, contact ResleevedNet\033[0m"
 echo -e " 〄 \033[1;37m ⌯ ⇢ \033[1;33mhttps://t.me/VeCNa_rK_bot \033[0m"
 echo -e " 〄 \033[1;37m ⌯  \033[1;33mYou can also contact @VeCNa_rK_bot on Telegram\033[0m"
-echo ""
-echo "───────────────────────────────────────────────────────────────────────•"
+echo -e "\033[1;36m───────────────────────────────────────────────────────────────────────•\033[0m"
 read -p " ┈➤ Please enter the Installation key ↩︎" key
 sleep 2
 echo "${T_GREEN} ⇢ Verification successful.${T_RESET}"
-echo "${T_GREEN} ⇢ Proceeding with the installation...${T_RESET}"
 echo ""
-echo ""
-echo -e "\033[1;32m ♻️ Please wait...\033[0m"
+echo "${T_GREEN} ⇢ ♻️ Proceeding with the installation...${T_RESET}"
 sleep 1
 linklayer_inst() {
 configger
@@ -265,14 +251,13 @@ fetcher
 }
 linklyr() {
 figlet -k LinkLayer | awk '{gsub(/./,"\033[3"int(rand()*5+1)"m&\033[0m")}1'
-echo "───────────────────────────────────────────────────────────────────────•"
-echo ""
+echo -e "\033[1;36m───────────────────────────────────────────────────────────────────────•\033[0m"
 echo -e "\033[1;32m[\033[1;32mPass ✅\033[1;32m] \033[1;37m ⇢  \033[1;33mChecking libs...\033[0m"
+echo ""
 echo -e "\033[1;32m      ♻️ \033[1;37m      \033[1;33mPlease wait...\033[0m"
-echo -e ""
+echo ""
 mv /etc/M/bin/link /usr/bin/link &>/dev/null
 chmod +x /usr/bin/link &>/dev/null
-echo ""
 }
 linklayer_inst
 linklyr
@@ -288,13 +273,12 @@ banner
 verification
 clear
 figlet -k LinkLayer | lolcat
-echo -e "\033[94m⚙︎ ResleevedNet LinkLaYerVPN Manager Script ⚙︎\033[0m"
-echo "───────────────────────────────────────────────────────────────────────•"
-echo "${T_GREEN}LinkLaYerVPN Server | Manager - Installation completed!${T_RESET}"
+echo -e "\033[1;36mResleevedNet LinkLaYerVPN Manager Script\033[0m"
+echo -e "\033[1;32m───────────────────────────────────────────────────────────────────────•\033[0m"
+echo -e "\033[1;33mLinkLaYerVPN Server | Manager - Installation completed!\033[0m"
+echo -e "\033[1;32mPlease run \033[1;33m'systemctl status lnk-server.service'\033[1;33m to check the status. \033[0m"
 echo ""
-echo -e "\033[1;33mPlease run 'systemctl status lnk-server.service' to check the status. \033[0m"
-echo ""
-echo -e "\033[1;36mType: "link" to access the menu\033[0m"
+echo -e "\033[1;36mType: \033[1;33m"link"\033[1;33m to access the menu\033[0m"
 echo ""
 read -p " ┈➤ Press any key to exit ↩︎" key
 }
