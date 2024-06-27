@@ -256,9 +256,7 @@ figlet -k LinkLayer | lolcat
 echo -e "\033[1;36mResleevedNet LinkLaYerVPN Manager Script\033[0m"
 echo -e "\033[1;32m───────────────────────────────────────────────────────────────────────•\033[0m"
 echo -e "\033[1;33mLinkLaYerVPN Server | Manager - Installation completed!\033[0m"
-echo -e "\033[1;32mPlease run \033[1;33m'systemctl status lnk-server.service'\033[1;33m to check the status. \033[0m"
-echo ""
-echo -e "\033[1;36mType: \033[1;33m"link"\033[1;33m to access the menu\033[0m"
+echo -e "\033[1;36mType: \033[1;33mlink\033[1;33m to access the menu\033[0m"
 echo ""
 read -p " ┈➤ Press any key to exit ↩︎" key
 }
