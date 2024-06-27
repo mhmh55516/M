@@ -12,28 +12,10 @@ T_GREEN=$(tput setaf 2)
 T_YELLOW=$(tput setaf 3)
 T_RED=$(tput setaf 1)
 T_RESET=$(tput sgr0)
-script_header() {
-clear $$ clear
-echo ".-.   .-..---.  ,-.  _______     "
-echo " \ \ / // .-. ) | | |__   __|    "
-echo "  \ V / | | |(_)| |   )| |       "
-echo "   ) /  | | | | | |  (_) |       "
-echo "  (_)   \ \`-' / | \`--. | |       "
-echo "         )---'  |( __.'\`-'       "
-echo "        (_)     (_)              "
-echo -e "\e[1m\e[34m****************************************************"
-echo -e "  Installation & Auto Config for \e[1;36mLinkLayer VPN\e[0m"
-echo -e "    (Version 3.0 Public) - by: @VeCNa_rK_bot // @Resleeved"
-echo -e "           (Credit): (NewToolsWorks)"
-echo -e "\e[1m\e[34m****************************************************\e[0m"
-echo ""
-}
 print_status() {
 printf "\033[1;32m[\033[1;32mPass ✅\033[1;32m] \033[1;37m ⇢ \033[1;33m%s\033[1;33m\n" "$1";
 }
 update_packages() {
-clear
-echo ""
 echo ".-.   .-..---.  ,-.  _______     "
 echo " \ \ / // .-. ) | | |__   __|    "
 echo "  \ V / | | |(_)| |   )| |       "
@@ -41,7 +23,8 @@ echo "   ) /  | | | | | |  (_) |       "
 echo "  (_)   \ \`-' / | \`--. | |       "
 echo "         )---'  |( __.'\`-'       "
 echo "        (_)     (_)              "
-
+echo -e "\033[1;32m[\033[1;32mPass ✅\033[1;32m] \033[1;37m ⇢  \033[1;33mCollecting binaries...\033[0m"
+echo -e "\033[1;32m      ♻️ \033[1;37m      \033[1;33mPlease wait...\033[0m"
 echo -e ""
 sudo apt-get update && sudo apt-get upgrade -y
 local dependencies=("curl" "bc" "grep" "wget" "nano" "net-tools" "figlet" "lolcat" "git" "netcat" "openssl")
@@ -57,7 +40,6 @@ sudo ln -s /usr/games/lolcat /usr/local/bin/lolcat
 apt install sudo -y > /dev/null 2>&1
 DEBIAN_FRONTEND=noninteractive apt-get -qq install -yqq --no-install-recommends ca-certificates > /dev/null 2>&1
 clear
-echo ""
 echo -e "\033[1;32m[\033[1;32mPass ✅\033[1;32m] \033[1;37m ⇢  \033[1;33mCollecting binaries...\033[0m"
 echo -e "\033[1;32m      ♻️ \033[1;37m      \033[1;33mPlease wait...\033[0m"
 echo -e ""
@@ -265,9 +247,8 @@ sleep 2
 clear
 }
 main() {
-clear
+clear && clear
 checkRoot
-script_header
 update_packages
 banner
 verification
