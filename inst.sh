@@ -63,7 +63,7 @@ print_status "Setting permissions..."
 chown -R root:root /etc/M &>/dev/null
 chmod -R 755 /etc/M &>/dev/null
 if [ -f /etc/systemd/system/lnk-server.service ]; then
-print_status "x.service file already exists."
+print_status "LinkLayer Service already exists."
 print_status "Stopping and disabling the existing service..."
 systemctl stop lnk-server.service &>/dev/null
 systemctl disable lnk-server.service &>/dev/null
@@ -214,7 +214,7 @@ echo 'echo "" ' >>~/.bashrc
 echo 'echo -e ""' >>~/.bashrc
 }
 verification() {
-figlet -k LinkLayer | awk '{gsub(/./,"\033[3"int(rand()*5+1)"m&\033[0m")}1' && figlet -k VPN | awk '{gsub(/./,"\033[3"int(rand()*5+1)"m&\033[0m")}1'
+figlet -k LinkLayer | awk '{gsub(/./,"\033[3"int(rand()*5+1)"m&\033[0m")}1'
 echo -e "\033[1;36m───────────────────────────────────────────────────────────────────────•\033[0m"
 echo -e " 〄 \033[1;37m ⌯  \033[1;33mYou must have purchased a Key\033[0m"
 echo -e " 〄 \033[1;37m ⌯  \033[1;33mif you didn't, contact ResleevedNet\033[0m"
@@ -237,7 +237,6 @@ echo -e "\033[1;36m────────────────────�
 echo -e "\033[1;32m[\033[1;32mPass ✅\033[1;32m] \033[1;37m ⇢  \033[1;33mChecking libs...\033[0m"
 echo ""
 echo -e "\033[1;32m      ♻️ \033[1;37m      \033[1;33mPlease wait...\033[0m"
-echo ""
 mv /etc/M/bin/link /usr/bin/link &>/dev/null
 chmod +x /usr/bin/link &>/dev/null
 }
@@ -252,7 +251,7 @@ checkRoot
 update_packages
 banner
 verification
-clear
+clear && clear
 figlet -k LinkLayer | lolcat
 echo -e "\033[1;36mResleevedNet LinkLaYerVPN Manager Script\033[0m"
 echo -e "\033[1;32m───────────────────────────────────────────────────────────────────────•\033[0m"
