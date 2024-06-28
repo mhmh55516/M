@@ -214,13 +214,14 @@ echo 'echo -e ""' >>~/.bashrc
 }
 verification() {
 clear && clear
-figlet -k LinkLayer | awk '{gsub(/./,"\033[3"int(rand()*5+1)"m&\033[0m")}1'
-echo -e "\033[1;36m───────────────────────────────────────────────────────────────────────•\033[0m"
+figlet -k Resleeved | awk '{gsub(/./,"\033[3"int(rand()*5+1)"m&\033[0m")}1'
+echo -e "\033[1;34m   ResleevedNet v.5 \033[0m  | \033[1;33m v.5 Release  | ResleevedNet \033[0m"
+echo -e "\033[1;36m╰═════════════════════════════════════════════════════╯\033[0m"
 echo -e " 〄 \033[1;37m ⌯  \033[1;33mYou must have purchased a Key\033[0m"
 echo -e " 〄 \033[1;37m ⌯  \033[1;33mif you didn't, contact ResleevedNet\033[0m"
 echo -e " 〄 \033[1;37m ⌯ ⇢ \033[1;33mhttps://t.me/VeCNa_rK_bot \033[0m"
 echo -e " 〄 \033[1;37m ⌯  \033[1;33mYou can also contact @VeCNa_rK_bot on Telegram\033[0m"
-echo -e "\033[1;36m───────────────────────────────────────────────────────────────────────•\033[0m"
+echo -e "\033[1;36m──────────────────────────────────────────────────────────────•\033[0m"
 read -p " ┈➤ Please enter the Installation key ↩︎" key
 sleep 2
 echo ""
