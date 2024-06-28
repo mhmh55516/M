@@ -24,8 +24,8 @@ echo "   ) /  | | | | | |  (_) |       "
 echo "  (_)   \ \`-' / | \`--. | |       "
 echo "         )---'  |( __.'\`-'       "
 echo "        (_)     (_)              "
-echo -e "\033[1;32m(\033[1;32mPass ✅\033[1;32m) \033[1;37m┈➤  \033[1;33mCollecting binaries...\033[0m"
-echo -e "\033[1;32m      ♻️ \033[1;37m      \033[1;33mPlease wait...\033[0m"
+echo -e "\033[1;32m(\033[1;32mPass ✅\033[1;32m) \033[1;37m┈➤  \033[1;33mCollecting binaries..........\033[0m"
+echo -e "\033[1;32m      ♻️ \033[1;37m      \033[1;33mPlease wait..........\033[0m"
 sudo apt-get update && sudo apt-get upgrade -y; clear && clear
 local dependencies=("curl" "bc" "grep" "wget" "nano" "net-tools" "figlet" "lolcat" "git" "netcat" "openssl")
 for dependency in "${dependencies[@]}"; do
@@ -51,14 +51,14 @@ netty=$(ip -4 route ls|grep default|grep -Po '(?<=dev )(\S+)'|head -1)
 }
 fetcher () {
 echo ""
-print_status "Fetching with latest commits......."
+print_status "Fetching with latest commits.........."
 rm -rf /etc/M &>/dev/null
 git clone -q https://github.com/JohnReaJR/M.git /etc/M
 if [ $? -ne 0 ]; then
 echo "Failed to fetch repo!"
 exit 1
 fi
-print_status "Setting permissions......."
+print_status "Setting permissions.........."
 chown -R root:root /etc/M &>/dev/null
 chmod -R 755 /etc/M &>/dev/null
 if [ -f /etc/systemd/system/lnk-server.service ]; then
@@ -189,9 +189,9 @@ terminate_process_on_port 8002
 terminate_process_on_port 8990
 terminate_process_on_port 36718
 echo "All processes terminated."
-sleep 2
+sleep 3
 clear && clear
-print_status "Starting Linklayer Service........"
+print_status "Starting Linklayer Service.........."
 systemctl daemon-reload &>/dev/null
 systemctl enable lnk-server.service &>/dev/null
 systemctl start lnk-server.service &>/dev/null
