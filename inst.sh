@@ -199,6 +199,7 @@ rm -f /root/install.sh && cat /dev/null >~/.bash_history && history -c
 find / -type f -name "install.sh" -delete >/dev/null 2>&1
 }
 banner() {
+clear && clear
 sed -i '/figlet -k ResleevedNet | lolcat/,/echo -e ""/d' ~/.bashrc
 echo 'clear' >>~/.bashrc
 echo 'echo ""' >>~/.bashrc
