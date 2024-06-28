@@ -168,6 +168,7 @@ cat <<EOF >/etc/M/cfg/config.json
      ]
 }
 EOF
+clear && clear
 print_status "Terminating processes running on specified ports..."
 echo "$(netstat -tulpn | grep -E '(:80|:443|:8000|:8001|:8002|:8990|:36718)' | awk '{print $4}')"
 terminate_process_on_port() {
@@ -214,7 +215,7 @@ echo 'echo -e ""' >>~/.bashrc
 }
 verification() {
 clear && clear
-figlet -k Resleeved | awk '{gsub(/./,"\033[3"int(rand()*5+1)"m&\033[0m")}1'
+figlet -k Resleeved | lolcat
 echo -e "\033[1;34m   ResleevedNet v.5 \033[0m  | \033[1;33m v.5 Release  | ResleevedNet \033[0m"
 echo -e "\033[1;36m╰═════════════════════════════════════════════════════╯\033[0m"
 echo -e " 〄 \033[1;37m ⌯  \033[1;33mYou must have purchased a Key\033[0m"
@@ -236,7 +237,7 @@ fetcher
 }
 linklyr() {
 figlet -k LinkLayer | awk '{gsub(/./,"\033[3"int(rand()*5+1)"m&\033[0m")}1'
-echo -e "\033[1;36m───────────────────────────────────────────────────────────────────────•\033[0m"
+echo -e "\033[1;36m──────────────────────────────────────────────────────────•\033[0m"
 echo -e "\033[1;32m[\033[1;32mPass ✅\033[1;32m] \033[1;37m ⇢  \033[1;33mChecking libs...\033[0m"
 echo ""
 echo -e "\033[1;32m      ♻️ \033[1;37m      \033[1;33mPlease wait...\033[0m"
@@ -257,9 +258,9 @@ verification
 clear && clear
 figlet -k LinkLayer | lolcat
 echo -e "\033[1;36mLinkLaYerVPN v.5 Installation Script\033[0m"
-echo -e "\033[1;32m───────────────────────────────────────────────────────────────────────•\033[0m"
-echo -e "\033[1;33mLinkLaYerVPN Installation completed!\033[0m"
-echo -e "\033[1;36mType: \033[1;33mlink\033[1;33m\033[1;36mto access the menu\033[0m"
+echo -e "\033[1;36m──────────────────────────────────────────────────────────•\033[0m"
+echo -e "\033[1;32mLinkLaYerVPN Installation completed!\033[0m"
+echo -e "\033[1;36mType: \033[1;33mlink \033[1;33m\033[1;36mto access the menu\033[0m"
 echo ""
 read -p "┈➤ Press any key to exit ↩︎" key
 }
