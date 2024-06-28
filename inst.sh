@@ -226,9 +226,9 @@ echo -e "\033[1;36m────────────────────�
 read -p "┈➤ Please enter the Installation key ↩︎" key
 sleep 2
 echo ""
-echo -e "\033[1;36m┈➤ Verification successful..........\033[0m"
+echo -e "\033[1;33m┈➤ Verification successful..........\033[0m"
 echo ""
-echo -e "\033[1;36m┈➤ ♻️ Proceeding with the installation..........\033[0m"
+echo -e "\033[1;32m┈➤ ♻️ Proceeding with the installation..........\033[0m"
 sleep 1
 echo ""
 linklayer_inst() {
