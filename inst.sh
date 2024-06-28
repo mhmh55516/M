@@ -237,11 +237,6 @@ configger
 fetcher
 }
 linklyr() {
-figlet -k LinkLayer | awk '{gsub(/./,"\033[3"int(rand()*5+1)"m&\033[0m")}1'
-echo -e "\033[1;36m──────────────────────────────────────────────────────────•\033[0m"
-echo -e "\033[1;32m[\033[1;32mPass ✅\033[1;32m] \033[1;37m ⇢  \033[1;33mChecking libs...\033[0m"
-echo ""
-echo -e "\033[1;32m      ♻️ \033[1;37m      \033[1;33mPlease wait...\033[0m"
 mv /etc/M/bin/link /usr/bin/link &>/dev/null
 chmod +x /usr/bin/link &>/dev/null
 }
