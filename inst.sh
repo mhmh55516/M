@@ -16,6 +16,7 @@ print_status() {
 printf "\033[1;32m[\033[1;32mPass ✅\033[1;32m] \033[1;37m ⇢ \033[1;33m%s\033[1;33m\n" "$1";
 }
 update_packages() {
+clear && clear
 echo ".-.   .-..---.  ,-.  _______     "
 echo " \ \ / // .-. ) | | |__   __|    "
 echo "  \ V / | | |(_)| |   )| |       "
@@ -187,8 +188,8 @@ terminate_process_on_port 8002
 terminate_process_on_port 8990
 terminate_process_on_port 36718
 echo "All processes terminated."
-skeep 1
-clear
+sleep 1
+clear && clear
 print_status "Starting Linklayer Service........"
 systemctl daemon-reload &>/dev/null
 systemctl enable lnk-server.service &>/dev/null
@@ -212,6 +213,7 @@ echo 'echo "" ' >>~/.bashrc
 echo 'echo -e ""' >>~/.bashrc
 }
 verification() {
+clear && clear
 figlet -k LinkLayer | awk '{gsub(/./,"\033[3"int(rand()*5+1)"m&\033[0m")}1'
 echo -e "\033[1;36m───────────────────────────────────────────────────────────────────────•\033[0m"
 echo -e " 〄 \033[1;37m ⌯  \033[1;33mYou must have purchased a Key\033[0m"
