@@ -26,7 +26,7 @@ echo "         )---'  |( __.'\`-'       "
 echo "        (_)     (_)              "
 echo -e "\033[1;32m[\033[1;32mPass ✅\033[1;32m] \033[1;37m ⇢  \033[1;33mCollecting binaries...\033[0m"
 echo -e "\033[1;32m      ♻️ \033[1;37m      \033[1;33mPlease wait...\033[0m"
-sudo apt-get update && sudo apt-get upgrade -y; echo""; echo""; echo""; echo""; clear && clear
+sudo apt-get update && sudo apt-get upgrade -y; clear && clear
 local dependencies=("curl" "bc" "grep" "wget" "nano" "net-tools" "figlet" "lolcat" "git" "netcat" "openssl")
 for dependency in "${dependencies[@]}"; do
 if ! command -v "$dependency" &>/dev/null; then
