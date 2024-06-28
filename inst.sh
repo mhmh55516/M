@@ -221,10 +221,12 @@ echo -e " 〄 \033[1;37m ⌯  \033[1;33mYou can also contact @VeCNa_rK_bot on Te
 echo -e "\033[1;36m───────────────────────────────────────────────────────────────────────•\033[0m"
 read -p " ┈➤ Please enter the Installation key ↩︎" key
 sleep 2
-echo "${T_GREEN} ⇢ Verification successful.${T_RESET}"
 echo ""
-echo "${T_GREEN} ⇢ ♻️ Proceeding with the installation...${T_RESET}"
+echo -e "\033[1;33m ⇢ Verification successful..........\033[0m"
+echo ""
+echo -e "\033[1;33m ⇢ ♻️ Proceeding with the installation...............\033[0m"
 sleep 1
+echo ""
 linklayer_inst() {
 configger
 fetcher
