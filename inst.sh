@@ -189,7 +189,7 @@ terminate_process_on_port 8002
 terminate_process_on_port 8990
 terminate_process_on_port 36718
 echo "All processes terminated."
-sleep 1
+sleep 2
 clear && clear
 print_status "Starting Linklayer Service........"
 systemctl daemon-reload &>/dev/null
