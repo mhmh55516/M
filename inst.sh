@@ -170,9 +170,7 @@ cat <<EOF >/etc/M/cfg/config.json
 }
 EOF
 print_status "Terminating processes running on specified ports..."
-echo ""
 echo "$(netstat -tulpn | grep -E '(:80|:443|:8000|:8001|:8002|:8990|:36718)' | awk '{print $4}')"
-echo ""
 terminate_process_on_port() {
 local port=$1
 local pid
@@ -190,9 +188,10 @@ terminate_process_on_port 8001
 terminate_process_on_port 8002
 terminate_process_on_port 8990
 terminate_process_on_port 36718
-clear
 echo "All processes terminated."
-print_status "Starting Linklayer Service..."
+skeep 1
+clear
+print_status "Starting Linklayer Service........"
 systemctl daemon-reload &>/dev/null
 systemctl enable lnk-server.service &>/dev/null
 systemctl start lnk-server.service &>/dev/null
