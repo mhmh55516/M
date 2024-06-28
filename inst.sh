@@ -257,8 +257,8 @@ clear && clear
 figlet -k LinkLayer | lolcat
 echo -e "\033[1;36mResleevedNet LinkLaYerVPN Manager Script\033[0m"
 echo -e "\033[1;32m───────────────────────────────────────────────────────────────────────•\033[0m"
-echo -e "\033[1;33mLinkLaYerVPN Server | Manager - Installation completed!\033[0m"
-echo -e "\033[1;36mType: \033[1;33mlink\033[1;33m to access the menu\033[0m"
+echo -e "\033[1;33mLinkLaYerVPN Installation completed!\033[0m"
+echo -e "\033[1;36mType: \033[1;33mlink\033[1;33m\033[1;36mto access the menu\033[0m"
 echo ""
 read -p " ┈➤ Press any key to exit ↩︎" key
 }
