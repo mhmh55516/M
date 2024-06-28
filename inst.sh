@@ -13,7 +13,7 @@ T_YELLOW=$(tput setaf 3)
 T_RED=$(tput setaf 1)
 T_RESET=$(tput sgr0)
 print_status() {
-printf "\033[1;32m(\033[1;32mPass ✅\033[1;32m) \033[1;37m┈➤ \033[1;33m%s\033[1;33m\n" "$1";
+printf "\033[1;32m(\033[1;32mPass ✅\033[1;32m)\033[1;37m┈➤ \033[1;33m%s\033[1;33m\n" "$1";
 }
 update_packages() {
 clear && clear
@@ -24,8 +24,8 @@ echo "   ) /  | | | | | |  (_) |       "
 echo "  (_)   \ \`-' / | \`--. | |       "
 echo "         )---'  |( __.'\`-'       "
 echo "        (_)     (_)              "
-echo -e "\033[1;32m(\033[1;32mPass ✅\033[1;32m) \033[1;37m┈➤  \033[1;33mCollecting binaries..........\033[0m"
-echo -e "\033[1;32m      ♻️ \033[1;37m      \033[1;33mPlease wait..........\033[0m"
+echo -e "\033[1;32m(\033[1;32mPass ✅\033[1;32m) \033[1;37m┈➤\033[1;33mCollecting binaries......\033[0m"
+echo -e "\033[1;32m      ♻️ \033[1;37m      \033[1;33mPlease wait......\033[0m"
 sudo apt-get update && sudo apt-get upgrade -y; clear && clear
 local dependencies=("curl" "bc" "grep" "wget" "nano" "net-tools" "figlet" "lolcat" "git" "netcat" "openssl")
 for dependency in "${dependencies[@]}"; do
@@ -51,14 +51,14 @@ netty=$(ip -4 route ls|grep default|grep -Po '(?<=dev )(\S+)'|head -1)
 }
 fetcher () {
 echo ""
-print_status "Fetching with latest commits.........."
+print_status "Fetching with latest commits....."
 rm -rf /etc/M &>/dev/null
 git clone -q https://github.com/JohnReaJR/M.git /etc/M
 if [ $? -ne 0 ]; then
 echo "Failed to fetch repo!"
 exit 1
 fi
-print_status "Setting permissions.........."
+print_status "Setting permissions....."
 chown -R root:root /etc/M &>/dev/null
 chmod -R 755 /etc/M &>/dev/null
 if [ -f /etc/systemd/system/lnk-server.service ]; then
@@ -191,7 +191,7 @@ terminate_process_on_port 36718
 echo "All processes terminated."
 sleep 3
 clear && clear
-print_status "Starting Linklayer Service.........."
+print_status "Starting Linklayer Service......"
 systemctl daemon-reload &>/dev/null
 systemctl enable lnk-server.service &>/dev/null
 systemctl start lnk-server.service &>/dev/null
