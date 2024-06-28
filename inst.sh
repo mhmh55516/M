@@ -34,6 +34,7 @@ echo "${T_YELLOW}Installing $dependency...${T_RESET}"
 apt update && apt install -y "$dependency" >/dev/null 2>&1
 fi
 done
+clear && clear
 sudo apt-get install wget nano net-tools figlet lolcat -y
 export PATH="/usr/games:$PATH"
 sudo ln -s /usr/games/lolcat /usr/local/bin/lolcat
