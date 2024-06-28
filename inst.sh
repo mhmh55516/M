@@ -261,7 +261,7 @@ echo -e "\033[1;33mLinkLaYerVPN v.5 Installation Script\033[0m"
 echo -e "\033[1;36m──────────────────────────────────────────────────────────•\033[0m"
 echo -e "\033[1;32mLinkLaYerVPN Installation completed!\033[0m"
 echo ""
-echo -e ""\033[1;33mType: "\033[1;36mlink\033[1;33m\033[1;33m" to access the menu\033[0m""
+echo -e "\033[1;33mType: ""\033[1;36mlink\033[1;33m\033[1;33m"" to access the menu\033[0m"
 echo ""
 read -p "┈➤ Press any key to exit ↩︎" key
 }
