@@ -221,13 +221,13 @@ echo -e " 〄 \033[1;37m ⌯  \033[1;33mYou must have purchased a Key\033[0m"
 echo -e " 〄 \033[1;37m ⌯  \033[1;33mif you didn't, contact ResleevedNet\033[0m"
 echo -e " 〄 \033[1;37m ⌯ ⇢ \033[1;33mhttps://t.me/VeCNa_rK_bot \033[0m"
 echo -e " 〄 \033[1;37m ⌯  \033[1;33mYou can also contact @VeCNa_rK_bot on Telegram\033[0m"
-echo -e "\033[1;36m──────────────────────────────────────────────────────────────•\033[0m"
-read -p " ┈➤ Please enter the Installation key ↩︎" key
+echo -e "\033[1;36m──────────────────────────────────────────────────────────•\033[0m"
+read -p "┈➤ Please enter the Installation key ↩︎" key
 sleep 2
 echo ""
-echo -e "\033[1;33m ⇢ Verification successful..........\033[0m"
+echo -e "\033[1;36m┈➤ Verification successful..........\033[0m"
 echo ""
-echo -e "\033[1;33m ⇢ ♻️ Proceeding with the installation...............\033[0m"
+echo -e "\033[1;36m┈➤ ♻️ Proceeding with the installation..........\033[0m"
 sleep 1
 echo ""
 linklayer_inst() {
