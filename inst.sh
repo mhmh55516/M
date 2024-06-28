@@ -13,7 +13,7 @@ T_YELLOW=$(tput setaf 3)
 T_RED=$(tput setaf 1)
 T_RESET=$(tput sgr0)
 print_status() {
-printf "\033[1;32m[\033[1;32mPass ✅\033[1;32m] \033[1;37m ⇢ \033[1;33m%s\033[1;33m\n" "$1";
+printf "\033[1;32m(\033[1;32mPass ✅\033[1;32m) \033[1;37m┈➤ \033[1;33m%s\033[1;33m\n" "$1";
 }
 update_packages() {
 clear && clear
@@ -41,8 +41,6 @@ sudo ln -s /usr/games/lolcat /usr/local/bin/lolcat
 apt install sudo -y > /dev/null 2>&1
 DEBIAN_FRONTEND=noninteractive apt-get -qq install -yqq --no-install-recommends ca-certificates > /dev/null 2>&1
 clear
-echo -e "\033[1;32m[\033[1;32mPass ✅\033[1;32m] \033[1;37m ⇢  \033[1;33mCollecting binaries...\033[0m"
-echo -e "\033[1;32m      ♻️ \033[1;37m      \033[1;33mPlease wait...\033[0m"
 }
 configger(){
 read -p "Enter your domain name (or use 0.0.0.0): " domain
@@ -52,14 +50,15 @@ fi
 netty=$(ip -4 route ls|grep default|grep -Po '(?<=dev )(\S+)'|head -1)
 }
 fetcher () {
-print_status "Fetching with latest commits..."
+echo ""
+print_status "Fetching with latest commits......."
 rm -rf /etc/M &>/dev/null
 git clone -q https://github.com/JohnReaJR/M.git /etc/M
 if [ $? -ne 0 ]; then
 echo "Failed to fetch repo!"
 exit 1
 fi
-print_status "Setting permissions..."
+print_status "Setting permissions......."
 chown -R root:root /etc/M &>/dev/null
 chmod -R 755 /etc/M &>/dev/null
 if [ -f /etc/systemd/system/lnk-server.service ]; then
@@ -200,7 +199,6 @@ rm -f /root/install.sh && cat /dev/null >~/.bash_history && history -c
 find / -type f -name "install.sh" -delete >/dev/null 2>&1
 }
 banner() {
-clear && clear
 sed -i '/figlet -k ResleevedNet | lolcat/,/echo -e ""/d' ~/.bashrc
 echo 'clear' >>~/.bashrc
 echo 'echo ""' >>~/.bashrc
