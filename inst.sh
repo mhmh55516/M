@@ -215,7 +215,7 @@ echo 'echo -e ""' >>~/.bashrc
 }
 verification() {
 clear && clear
-figlet -k Resleeved | lolcat
+figlet -k LinkLayer | lolcat
 echo -e "\033[1;34m   ResleevedNet v.5 \033[0m  | \033[1;33m v.5 Release  | ResleevedNet \033[0m"
 echo -e "\033[1;36m╰═════════════════════════════════════════════════════╯\033[0m"
 echo -e " 〄 \033[1;37m ⌯  \033[1;33mYou must have purchased a Key\033[0m"
@@ -257,10 +257,11 @@ banner
 verification
 clear && clear
 figlet -k LinkLayer | lolcat
-echo -e "\033[1;36mLinkLaYerVPN v.5 Installation Script\033[0m"
+echo -e "\033[1;33mLinkLaYerVPN v.5 Installation Script\033[0m"
 echo -e "\033[1;36m──────────────────────────────────────────────────────────•\033[0m"
 echo -e "\033[1;32mLinkLaYerVPN Installation completed!\033[0m"
-echo -e "\033[1;36mType: \033[1;33mlink \033[1;33m\033[1;36mto access the menu\033[0m"
+echo ""
+echo -e "\033[1;33mType: \033[1;36mlink \033[1;33m\033[1;33mto access the menu\033[0m"
 echo ""
 read -p "┈➤ Press any key to exit ↩︎" key
 }
