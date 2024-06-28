@@ -42,7 +42,6 @@ DEBIAN_FRONTEND=noninteractive apt-get -qq install -yqq --no-install-recommends 
 clear
 echo -e "\033[1;32m[\033[1;32mPass ✅\033[1;32m] \033[1;37m ⇢  \033[1;33mCollecting binaries...\033[0m"
 echo -e "\033[1;32m      ♻️ \033[1;37m      \033[1;33mPlease wait...\033[0m"
-echo -e ""
 }
 configger(){
 read -p "Enter your domain name (or use 0.0.0.0): " domain
