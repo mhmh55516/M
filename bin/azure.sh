@@ -76,7 +76,7 @@ fi
 if (date "+%Y-%m-%d" -d "$sysdate" >/dev/null 2>&1); then
 if [[ -z $inputdate ]]; then
 echo ""
-echo "・ You have entered an invalid or non-existent date!"
+echo "You have entered an invalid or non-existent date!"
 echo "Enter a valid date in Day/Month/Year format "
 echo "For example: 01/01/2025"
 echo ""
@@ -87,7 +87,7 @@ today="$(date -d today +"%Y%m%d")"
 timemachine="$(date -d "$sysdate" +"%Y%m%d")"
 if [ $today -ge $timemachine ]; then
 echo ""
-echo "・ You have entered an invalid or non-existent date!!"
+echo "You have entered an invalid or non-existent date!!"
 echo "Enter a valid future date in Day/Month/Year format"
 echo "For example: 01/01/2025"
 echo ""
