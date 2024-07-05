@@ -118,7 +118,7 @@ exit 1
 fi
 else
 echo " "
-echo "・ The user $username does not exist!"
+echo "The user $username does not exist!"
 echo " "
 exit 1
 fi
