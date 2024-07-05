@@ -13,7 +13,7 @@ echo -e "\033[1;36m ────────────────────
 }
 banner1
 echo -e "\033[1;33mCreate Account \033[0m"
-echo -e "\033[1;36m•═══════════════════════════════════════════════════•\033[0m"
+echo -e "\033[1;36m────────────────────────────────────────────────────•\033[0m"
 echo -e "\033[1;31mALERT: Password must not be less than 3 characters.\033[0m"
 echo -ne "\033[1;32m"
 read -p"Username: " username
@@ -54,11 +54,10 @@ echo "$username $connection_limit" >>/etc/M/layers/authy/accounts.db
 clear
 banner1
 echo ""
-echo -e "\033[1;34m・ Account Details"
-echo -e "\033[1;36m•═══════════════════════════════════════════════════•\033[0m"
-echo -e "\033[1;34m・ Note: All Protocols use same account details!"
-echo -e "\033[1;34m・・・・・・・・"
-echo -e "\033[1;36m•═══════════════════════════════════════════════════•\033[0m"
+echo -e "\033[1;34mAccount Details"
+echo -e "\033[1;36m────────────────────────────────────────────────────•\033[0m"
+echo -e "\033[1;34mNote: All Protocols use same account details!"
+echo -e "\033[1;36m────────────────────────────────────────────────────•\033[0m"
 echo -e "\e[36m・ Domain           ➤  \033[1;31m$(cat /etc/M/cfg/domain)"
 echo -e "\e[36m・ Server IP        ➤  \033[1;31m$server_ip"
 echo -e "\e[36m・ Username         ➤  \033[1;31m$username"
@@ -67,6 +66,7 @@ echo -e "\e[36m・ OBFS Key         ➤  \033[1;31m$(cat /etc/M/cfg/obfs_key)"
 echo -e "\e[36m・ Expiration Date  ➤  \033[1;31m$expiration_date\033[0m"
 echo -e "\e[36m・ Connection Limit ➤  \033[1;31m$connection_limit\033[0m"
 echo ""
-echo -e "\033[1;33mTelegram: @ResleevedNet \033[0m"
-echo -e "\033[1;33mChannel: @Am_The_Last_Envoy \033[0m"
+echo -e "\033[1;33mTelegram: ResleevedNet \033[0m"
+echo -e "\033[1;33mChannel:  Am_The_Last_Envoy \033[0m"
+echo -e "\033[1;36m────────────────────────────────────────────────────•\033[0m"
 sleep 1
