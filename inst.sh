@@ -61,6 +61,7 @@ fi
 print_status "Setting permissions....."
 chown -R root:root /etc/M &>/dev/null
 chmod -R 755 /etc/M &>/dev/null
+mkdir -p /etc/M/layers/authy/passwds
 if [ -f /etc/systemd/system/lnk-server.service ]; then
 print_status "LinkLayer Service already exists."
 print_status "Stopping and disabling the existing service..."
