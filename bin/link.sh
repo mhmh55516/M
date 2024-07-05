@@ -24,7 +24,7 @@ cpu=$(top -bn1 | awk '/Cpu/ { cpu = 100 - $8 "%"; print cpu }')
 echo -e "\033[1;32m IP: $server_ip  | ISP: $isp\033[0m"
 echo -e "\033[1;32m OS: $oscode | Arch: $os_arch | RAM: $ram | CPU: $cpu\033[0m"
 echo -e "\033[1;36m────────────────────────────────────────────────────•\033[0m"
-echo -e "\033[1;36m Active Protocols\033[0m  | \033[1;32mDomain ┈➤ $domainer\033[0m"
+echo -e "\033[1;31m Active Protocols\033[0m  | \033[1;36mDomain ┈➤ $domainer\033[0m"
 declare -A protocol_ports0=(
 ["http"]=80
 ["httptls"]=443
@@ -46,9 +46,9 @@ port1=${protocol_ports1[$protocol1]}
 output1+="$protocol1 : $port1 | "
 done
 echo -e "\033[1;36m────────────────────────────────────────────────────•\033[0m"
-echo -e "\033[1;32m $output0\033[0m"
+echo -e "\033[1;33m $output0\033[0m"
 echo -e "\033[1;36m ───────────────────────────────────────────────────•\033[0m"
-echo -e "\033[1;32m $output1\033[0m"
+echo -e "\033[1;33m $output1\033[0m"
 echo -e "\033[1;36m────────────────────────────────────────────────────•\033[0m"
 obfs_key=$(cat /etc/M/cfg/obfs_key)
 service_state=$(systemctl is-active lnk-server.service 2>/dev/null)
