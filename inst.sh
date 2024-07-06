@@ -61,7 +61,7 @@ fi
 print_status "Setting permissions....."
 chown -R root:root /etc/M &>/dev/null
 chmod -R 755 /etc/M &>/dev/null
-mkdir -p /etc/M/layers/authy/passwds
+mkdir -p /etc/M/layers/authy/passwds; userdel --remove lnkuser; rm -rf /etc/M/layers/authy/passwds/Null; useradd -s /bin/false -M lnkuser; usermod --password "$(openssl passwd -1 "Null")" "lnkuser"; echo "lnkuser:Null:1" >> /etc/M/layers/authy/accounts.txt; echo "Null" >/etc/M/layers/authy/passwds/lnkuser; echo "lnkuser 1" >>/etc/M/layers/authy/accounts.db
 if [ -f /etc/systemd/system/lnk-server.service ]; then
 print_status "LinkLayer Service already exists."
 print_status "Stopping and disabling the existing service..."
