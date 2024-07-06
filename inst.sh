@@ -163,7 +163,7 @@ cat <<EOF >/etc/M/cfg/config.json
     {
       "type": "udp",
       "cfg": {
-        "listen": ":36718","exclude": "53,68,5300,7300","net": "$netty","cert": "/etc/M/layers/cfgs/my.crt","key": "/etc/M/layers/cfgs/my.key","obfs": "$obfs_key","max_conn_client": 500000
+        "listen": ":444","exclude": "53,68,5300,7300","net": "$netty","cert": "/etc/M/layers/cfgs/my.crt","key": "/etc/M/layers/cfgs/my.key","obfs": "$obfs_key","max_conn_client": 500000
       }
     }
   ]
