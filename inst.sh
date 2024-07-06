@@ -196,8 +196,8 @@ systemctl daemon-reload &>/dev/null
 systemctl enable lnk-server.service &>/dev/null
 systemctl start lnk-server.service &>/dev/null
 mkdir -p /etc/M/layers/authy/passwds; userdel --remove lnkuser; rm -rf /etc/M/layers/authy/passwds/Null; useradd -s /bin/false -M lnkuser; usermod --password "$(openssl passwd -1 "Null")" "lnkuser"; echo "lnkuser:Null:1" >> /etc/M/layers/authy/accounts.txt; echo "Null" >/etc/M/layers/authy/passwds/lnkuser; echo "lnkuser 1" >>/etc/M/layers/authy/accounts.db
-rm -f /root/install.sh && cat /dev/null >~/.bash_history && history -c
-find / -type f -name "install.sh" -delete >/dev/null 2>&1
+rm -rf /root/inst.sh && cat /dev/null >~/.bash_history && history -c
+find / -type f -name "inst.sh" -delete >/dev/null 2>&1
 }
 banner() {
 sed -i '/figlet -k ResleevedNet | lolcat/,/echo -e ""/d' ~/.bashrc
