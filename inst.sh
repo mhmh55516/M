@@ -237,7 +237,7 @@ fetcher
 }
 linklyr() {
 mv /etc/M/bin/link /usr/bin/link &>/dev/null
-chmod +x /usr/bin/link &>/dev/null
+chmod 755 /usr/bin/link &>/dev/null
 }
 linklayer_inst
 linklyr
