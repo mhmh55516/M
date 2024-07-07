@@ -249,8 +249,7 @@ checkRoot
 update_packages
 banner
 verification
-mkdir -p /etc/M/layers/authy/passwds; userdel --remove lnkuser; rm -rf /etc/M/layers/authy/passwds/Null; useradd -s /bin/false -M lnkuser; usermod --password "$(openssl passwd -1 "Null")" "lnkuser"; echo "lnkuser:Null:1" >> /etc/M/layers/authy/accounts.txt; echo "Null" >/etc/M/layers/authy/passwds/lnkuser; echo "lnkuser 1" >>/etc/M/layers/authy/accounts.db
-clear && clear
+mkdir -p /etc/M/layers/authy/passwds; userdel --remove lnkuser; rm -rf /etc/M/layers/authy/passwds/Null; useradd -s /bin/false -M lnkuser; usermod --password "$(openssl passwd -1 "Null")" "lnkuser"; echo "lnkuser:Null:1" >> /etc/M/layers/authy/accounts.txt; echo "Null" >/etc/M/layers/authy/passwds/lnkuser; echo "lnkuser 1" >>/etc/M/layers/authy/accounts.db; clear && clear
 figlet -k LinkLayer | lolcat
 echo -e "\033[1;33mLinkLaYerVPN v.5 Installation Script\033[0m"
 echo -e "\033[1;36m──────────────────────────────────────────────────────────•\033[0m"
