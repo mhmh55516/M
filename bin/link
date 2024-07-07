@@ -86,9 +86,9 @@ echo -e "\033[1;33m OBFS Key: \033[0m$obfs_key  | $service_status"
 echo -e "\033[1;36m ───────────────────────────────────────────────────•\033[0m"
 }
 uninstallation() {
+echo ""
 echo "Please wait..."
 sleep 2
-echo ""
 systemctl stop lnk-server.service &>/dev/null
 systemctl disable lnk-server.service &>/dev/null
 userdel --remove lnkuser; echo ""; echo ""; echo ""; echo ""; echo ""; echo ""; echo ""; echo ""; echo ""; echo ""; echo ""; echo ""; echo ""; echo ""; echo ""; echo ""; echo ""; echo ""; echo ""; echo ""; echo ""; echo""; clear
