@@ -240,8 +240,6 @@ chmod 755 /usr/bin/link &>/dev/null
 }
 linklayer_inst
 linklyr
-sleep 2
-clear
 }
 main() {
 clear && clear
