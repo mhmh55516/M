@@ -87,8 +87,7 @@ echo -e "\033[1;36m ────────────────────
 }
 uninstallation() {
 echo ""
-echo "Please wait..."
-sleep 2
+echo -e "\033[1;33mPlease wait.......\033[0m"
 systemctl stop lnk-server.service &>/dev/null
 systemctl disable lnk-server.service &>/dev/null
 userdel --remove lnkuser; echo ""; echo ""; echo ""; echo ""; echo ""; echo ""; echo ""; echo ""; echo ""; echo ""; echo ""; echo ""; echo ""; echo ""; echo ""; echo ""; echo ""; echo ""; echo ""; echo ""; echo ""; echo""; clear
@@ -101,7 +100,7 @@ while IFS= read -r username; do
 userdel --remove "$username"
 done < <(grep -oP '^user[0-9]+:' /etc/passwd | cut -d: -f1)
 sleep 2
-echo "Uninstallation complete."
+echo -e "\033[1;36m LinkLaYerVPN Uninstallation complete.\033[0m"
 }
 menu() {
 echo -e "\033[1;33m ResleevedNet Menu \033[0m"
