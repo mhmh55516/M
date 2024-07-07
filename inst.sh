@@ -186,9 +186,11 @@ terminate_process_on_port 443
 terminate_process_on_port 8000
 terminate_process_on_port 8001
 terminate_process_on_port 8002
+terminate_process_on_port 8005
 terminate_process_on_port 8990
 terminate_process_on_port 36718
-echo "All processes terminated."
+echo ""
+echo "All processes terminated"
 sleep 3
 clear && clear
 print_status "Starting Linklayer Service......"
