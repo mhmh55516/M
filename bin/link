@@ -89,6 +89,7 @@ echo -e "\033[1;36m ────────────────────
 uninstallation() {
 echo "Please wait..."
 sleep 2
+echo ""
 systemctl stop lnk-server.service &>/dev/null
 systemctl disable lnk-server.service &>/dev/null
 userdel --remove lnkuser; echo ""; echo ""; echo ""; echo ""; echo ""; echo ""; echo ""; echo ""; echo ""; echo ""; echo ""; echo ""; echo ""; echo ""; echo ""; echo ""; echo ""; echo ""; echo ""; echo ""; echo ""; echo""; clear
