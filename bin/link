@@ -154,7 +154,7 @@ cd /etc/M/bin && ./info.sh; cd
 read -n 1 -s -r -p "Press any key to return ↩︎"
 ;;
 6)
-banner
+banner00
 echo -e "\n\033[1;33m Active Protocols\033[0m"
 echo -e "\033[1;36m───────────────────────────────────────────────────\033[0m"
 lsof -i :80,443,5300,7300,8000,8001,8002,8005,8990,36718 | awk 'NR==1{print; next} {print "\033[1;34m・ " $0 "\033[0m"}'
@@ -162,7 +162,7 @@ echo -e "\033[1;36m────────────────────�
 read -n 1 -s -r -p "Press any key to return ↩︎"
 ;;
 7)
-banner
+banner00
 if [[ $service_state == "active" ]]; then
 systemctl restart lnk-server.service &>/dev/null
 echo -e "\nService restarted successfully."
@@ -175,13 +175,13 @@ sleep 3
 fi
 ;;
 8)
-banner
+banner00
 echo -e "reboot in 3 secs..."
 sleep 3
 reboot
 ;;
 11)
-banner
+banner00
 uninstallation
 sleep 2
 exit 0
