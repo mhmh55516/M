@@ -89,10 +89,10 @@ echo -e "\033[1;36m ────────────────────
 uninstallation() {
 banner00
 echo "Please wait..."
-sleep 5
+sleep 2
 systemctl stop lnk-server.service &>/dev/null
 systemctl disable lnk-server.service &>/dev/null
-userdel --remove lnkuser
+userdel --remove lnkuser; echo ""; echo ""; echo ""; echo ""; echo ""; echo ""; echo ""; echo ""; echo ""; echo ""; echo ""; echo ""; echo ""; echo ""; echo ""; echo ""; echo ""; echo ""; echo""; clear
 rm -rf /etc/M
 rm -rf /usr/bin/link
 rm -rf /usr/share/lnk
@@ -102,8 +102,7 @@ while IFS= read -r username; do
 userdel --remove "$username"
 done < <(grep -oP '^user[0-9]+:' /etc/passwd | cut -d: -f1)
 echo ""
-echo "Please wait..."
-sleep 3
+sleep 2
 echo "Uninstallation complete."
 }
 menu() {
