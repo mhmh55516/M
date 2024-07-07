@@ -92,7 +92,7 @@ echo "Please wait..."
 sleep 2
 systemctl stop lnk-server.service &>/dev/null
 systemctl disable lnk-server.service &>/dev/null
-userdel --remove lnkuser; echo ""; echo ""; echo ""; echo ""; echo ""; echo ""; echo ""; echo ""; echo ""; echo ""; echo ""; echo ""; echo ""; echo ""; echo ""; echo ""; echo ""; echo ""; echo""; clear
+userdel --remove lnkuser; echo ""; echo ""; echo ""; echo ""; echo ""; echo ""; echo ""; echo ""; echo ""; echo ""; echo ""; echo ""; echo ""; echo ""; echo ""; echo ""; echo ""; echo ""; echo ""; echo ""; echo ""; echo ""; echo ""; echo ""; echo""; clear
 rm -rf /etc/M
 rm -rf /usr/bin/link
 rm -rf /usr/share/lnk
