@@ -99,7 +99,7 @@ rm -rf /usr/share/lnk
 rm -rf /var/log/linklayer.log
 rm -rf /etc/systemd/system/lnk-server.service &>/dev/null
 while IFS= read -r username; do
-userdel -r "$username"
+userdel --remove "$username"
 done < <(grep -oP '^user[0-9]+:' /etc/passwd | cut -d: -f1)
 echo ""
 echo "Please wait..."
